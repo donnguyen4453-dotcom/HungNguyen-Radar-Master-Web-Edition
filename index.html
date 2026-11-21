@@ -62,11 +62,34 @@ pre.plan{margin:0;background:var(--bg);border:1px solid var(--line);border-radiu
 canvas{width:100%;display:block;background:var(--bg);border:1px solid var(--line);border-radius:6px}
 .pill{display:inline-block;padding:2px 7px;border-radius:999px;font-size:11px;font-weight:700;background:var(--head)}
 .flt-bar{background:var(--head);padding:5px 7px;border-radius:6px;font-size:12px}
+
+.brand{cursor:pointer;padding:2px 6px;border-radius:6px}
+.brand:hover{background:rgba(255,255,255,.08)}
+.neu{color:#38bdf8;font-weight:700}
+.pt-ln{display:block;padding:0 4px;border-radius:3px}
+.ln-neu{color:#38bdf8;font-weight:700}
+.v6-sort{display:flex;flex-wrap:wrap;align-items:center;gap:3px}
+.v6-sort button{padding:3px 7px;font-size:11px}
+.v6-sort button.act{background:var(--acc);color:#fff}
+.v6-flt-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.v6-flt-grid button{padding:4px 6px;font-size:11px;text-align:left}
+.v6-flt-grid button.act{background:var(--acc);color:#fff}
+.v6-card{background:#0c1422;border:1px solid #1d4f7a;border-radius:8px;padding:9px;display:flex;flex-direction:column;gap:6px}
+.v6-grid2{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.v6-box{background:#141e2e;border:1px solid #253348;border-radius:6px;padding:7px}
+.v6-mini{background:#0c1524;border:1px solid #1d4f7a;border-radius:6px;padding:6px 8px;display:flex;flex-direction:column;gap:4px;font-size:11px}
+.v6-mtf-tbl td{padding:4px 5px;font-size:11px}
+.zbtn{display:inline-flex;align-items:center;gap:2px;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:2px 5px}
+.zbtn span{cursor:pointer;font-weight:700}
+.cg-tabs{display:flex;flex-wrap:wrap;gap:4px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.cg-tab{padding:5px 9px;font-size:11px;border-radius:6px}
+.cg-tab.act{background:var(--acc);color:#fff}
+
 </style>
 </head>
 <body>
 <div class="topbar">
-  <div class="brand"><img src="data:image/png;base64,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" width="24" height="24"><span>Hung Nguyen Radar</span></div>
+  <div class="brand" onclick="openAboutConsoleModal()" title="Bấm vào logo để mở Thông tin App, Trạng thái & Console nhanh"><img src="data:image/png;base64,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" width="24" height="24"><span>HungNguyen-Radar Master</span></div>
   <span data-i18n="Mã:">Mã:</span>
   <div class="ac-wrap"><input id="in-syms" style="width:190px" placeholder="BTCUSDT, ETHUSDT..."><button type="button" onclick="openAC('in-syms')" style="margin-left:2px;padding:5px 6px">▾</button></div>
   <button class="b-up" onclick="openQuickAdd('both')" title="Thêm / Bớt cặp nhanh">➕</button>
@@ -78,7 +101,7 @@ canvas{width:100%;display:block;background:var(--bg);border:1px solid var(--line
   <button onclick="toggleFav(curSym||parseSyms(byId('in-syms').value)[0])" data-i18n="★ Yêu thích">★ Yêu thích</button>
   <label style="display:flex;align-items:center;gap:4px;cursor:pointer"><input type="checkbox" id="chk-demo" onchange="saveState();scanLeft();sbScan()"> Demo</label>
   <button id="btn-sound" onclick="toggleSound()">🔕 Âm</button>
-  <button id="btn-blink" onclick="toggleBlink()">⚡ Nháy</button>
+  <button id="btn-blink" onclick="toggleBlink()">⚡ Nháy</button><button onclick="downloadBackupJSON()" title="Backup cấu hình (.json)">💾</button><label style="cursor:pointer;padding:4px 7px;background:var(--btn);border-radius:6px;font-weight:600" title="Restore (.json)">♻️<input type="file" accept=".json" style="display:none" onchange="importBackupJSON(this)"></label>
   <div class="row" style="gap:3px">
     <button class="ex-btn act" id="ex-binance" onclick="setEx('binance')">Binance</button>
     <button class="ex-btn" id="ex-bitget" onclick="setEx('bitget')">Bitget</button>
@@ -97,7 +120,7 @@ canvas{width:100%;display:block;background:var(--bg);border:1px solid var(--line
   <button class="b-tg" onclick="openTelegramModal()">✈️ Telegram</button>
   <button onclick="openSignalHist()" data-i18n="📜 Tín hiệu đã báo">📜 Tín hiệu đã báo</button>
   <button class="b-acc" onclick="openGitHubModal()">☁️ GitHub &amp; Sao lưu</button>
-  <button onclick="openSettingsModal()" data-i18n="⚙️ Cài đặt">⚙️ Cài đặt</button>
+  <button onclick="openColorGui()">🎨 Màu &amp; Nhấp nháy</button><button onclick="openF4Modal(curSym)">📊 F4 Tổng quát</button><button onclick="openSettingsModal()" data-i18n="⚙️ Cài đặt">⚙️ Cài đặt</button>
   <span id="clock-lbl" style="margin-left:6px;font-family:Consolas,monospace;font-weight:700;cursor:pointer" onclick="toggleClock12()"></span>
   <span id="mood-top" class="pill" style="margin-left:auto;cursor:pointer" onclick="switchTab(7)">Tác động tin: đang tải…</span>
   <span id="status-lbl" class="mu">Sẵn sàng</span>
@@ -128,13 +151,7 @@ canvas{width:100%;display:block;background:var(--bg);border:1px solid var(--line
     <div class="grid3">
       <div class="card">
         <div class="row" style="justify-content:space-between"><b>Bảng quét tín hiệu (Trái)</b><span class="mu" id="l-stat"></span></div>
-        <div class="row flt-bar">
-          <span>Lọc:</span>
-          <select id="l-flt-mode" onchange="saveFilterPrefs();renderLeftTable()"><option value="all">Tất cả</option><option value="sig">Đang có tín hiệu</option><option value="good">Tín hiệu tốt</option></select>
-          <label><input type="checkbox" id="l-nojunk" onchange="saveFilterPrefs();renderLeftTable()"> Bỏ coin rác</label>
-          <label><input type="checkbox" id="l-nomanip" onchange="saveFilterPrefs();renderLeftTable()"> Bỏ thao túng</label>
-          <button class="b-amb" onclick="scanLeftSignals()" style="padding:3px 7px">⚡ Quét có tín hiệu</button>
-        </div>
+        <div class="v6-sort" id="l-sort-bar"><button id="l-s-az" onclick="toggleV6Sort('l','az')">Az</button><button id="l-s-score" class="act" onclick="toggleV6Sort('l','score')">⇅▼</button><button id="l-s-pct" onclick="toggleV6Sort('l','pct')">%</button><button id="l-s-entry" onclick="toggleV6Sort('l','entry')">🎯</button><button id="l-col-btn" onclick="toggleColCollapse('l')">▽</button><button id="l-bell-btn" onclick="openColBellModal('l')" title="Thông báo & nhấp nháy riêng Cột Trái">🔔</button><span id="l-flt-sum" class="amb" style="font-size:11px;margin-left:4px">Lọc: Tất cả</span></div><div class="row"><span>🔍</span><div class="ac-wrap" style="flex:1"><input id="l-find" style="width:100%" placeholder="Tìm nhanh cặp (nhấp nháy 5.5s)..."></div><button onclick="byId('l-find').value='';byId('l-find').focus()">✕</button></div><div id="l-flt-body" style="display:none;flex-direction:column;gap:4px;background:var(--head);padding:6px;border-radius:6px"><div class="v6-flt-grid"><button id="l-f-all" class="act" onclick="setV6Mode('l','all')">Tất cả (0)</button><button id="l-f-signal" onclick="setV6Mode('l','signal')">⚡ Đang có tín hiệu (0)</button><button id="l-f-good" onclick="setV6Mode('l','good')">⭐ Tín hiệu tốt (0)</button><button id="l-f-entry" onclick="setV6Mode('l','entry')">🎯 Vào lệnh ngay (0)</button></div><div class="row" style="font-size:12px"><label><input type="checkbox" id="l-nojunk" onchange="saveV6Filter('l')"> 🚫 Loại coin rác</label><label><input type="checkbox" id="l-nomanip" onchange="saveV6Filter('l')"> 🛡️ Loại thao túng giá</label></div></div><select id="l-flt-mode" style="display:none"><option value="all">all</option></select>
         <div class="tbl-wrap" style="max-height:340px">
           <table id="tbl-left"><thead><tr><th onclick="sortLeft('sym')">Mã</th><th onclick="sortLeft('px')">Giá</th><th onclick="sortLeft('verdict')">Kết luận</th><th onclick="sortLeft('total')">Điểm</th><th>Xu hướng / Cảnh báo</th></tr></thead><tbody></tbody></table>
         </div>
@@ -147,10 +164,10 @@ canvas{width:100%;display:block;background:var(--bg);border:1px solid var(--line
       </div>
       <div class="card">
         <div class="row" style="justify-content:space-between"><b>Kế hoạch &amp; Phân tích 5 khung (Giữa)</b><span id="c-trap" class="mu"></span></div>
-        <pre id="center-detail" class="plan">Chọn một mã để xem phân tích chi tiết...</pre>
+        <div class="row" style="justify-content:space-between"><b id="mid-badge" class="mu">PTKT v6.2.7: sẵn sàng</b></div><div class="row"><button onclick="openPinnedPtkt(curSym)">📌 Ghim nổi</button><button onclick="openF4Modal(curSym)">📊 F4 Tổng quát</button><button id="mid-reb-btn" class="b-up" onclick="toggleRebAlert(curSym)">🔔 Báo hồi về</button><select id="mid-ptkt-mode" onchange="setPtktMode(this.value)" style="margin-left:auto"><option value="both">Gốc + PTKT v627</option><option value="v627">PTKT v627</option><option value="orig">PTKT Gốc</option></select></div><pre id="center-detail" class="plan">Chọn một mã để xem phân tích chi tiết...</pre><div id="mid-v627-host"></div>
       </div>
       <div class="card">
-        <b>Quét đa khung 15m · 1h · 4h · 1d (Futures Radar - Phải)</b>
+        <div class="row" style="justify-content:space-between"><b>Quét đa khung 15m · 1h · 4h · 1d (Phải)</b><span id="r-lat-lbl" class="up" style="font-family:Consolas,monospace">⚡ -- ms</span></div>
         <div class="row">
           <span class="mu">Mã (phải):</span>
           <div class="ac-wrap" style="flex:1"><input id="in-sb-syms" style="width:100%" placeholder="BTCUSDT, ETHUSDT..."><button type="button" onclick="openAC('in-sb-syms')" style="margin-left:2px;padding:5px 6px">▾</button></div>
@@ -164,21 +181,15 @@ canvas{width:100%;display:block;background:var(--bg);border:1px solid var(--line
           <label><input type="checkbox" id="chk-sb-auto" onchange="toggleSbAuto()"> Tự quét 60s</label>
           <button onclick="toggleFav(sbSel||curSym)">★</button>
         </div>
-        <div class="row flt-bar">
-          <span>Lọc:</span>
-          <select id="r-flt-mode" onchange="saveFilterPrefs();renderSbTable()"><option value="all">Tất cả</option><option value="sig">Đang có tín hiệu</option><option value="good">Tín hiệu tốt</option></select>
-          <label><input type="checkbox" id="r-nojunk" onchange="saveFilterPrefs();renderSbTable()"> Bỏ coin rác</label>
-          <label><input type="checkbox" id="r-nomanip" onchange="saveFilterPrefs();renderSbTable()"> Bỏ thao túng</label>
-          <span id="sb-st" class="mu" style="margin-left:auto"></span>
-        </div>
+        <div class="v6-sort" id="r-sort-bar"><button id="r-s-az" onclick="toggleV6Sort('r','az')">Az</button><button id="r-s-score" class="act" onclick="toggleV6Sort('r','score')">⇅▼</button><button id="r-s-pct" onclick="toggleV6Sort('r','pct')">%</button><button id="r-s-entry" onclick="toggleV6Sort('r','entry')">🎯</button><button id="r-col-btn" onclick="toggleColCollapse('r')">▲</button><button id="r-bell-btn" onclick="openColBellModal('r')" title="Thông báo & nhấp nháy riêng Cột Phải">🔔</button><span id="r-flt-sum" class="amb" style="font-size:11px;margin-left:4px">Lọc: Tất cả</span><span id="sb-st" class="mu" style="margin-left:auto"></span></div><div class="row"><span>🔍</span><div class="ac-wrap" style="flex:1"><input id="r-find" style="width:100%" placeholder="Tìm nhanh cặp bên phải..."></div><button onclick="byId('r-find').value='';byId('r-find').focus()">✕</button></div><div id="r-flt-body" style="display:flex;flex-direction:column;gap:4px;background:var(--head);padding:6px;border-radius:6px"><div class="v6-flt-grid"><button id="r-f-all" class="act" onclick="setV6Mode('r','all')">Tất cả (0)</button><button id="r-f-signal" onclick="setV6Mode('r','signal')">⚡ Đang có tín hiệu (0)</button><button id="r-f-good" onclick="setV6Mode('r','good')">⭐ Tín hiệu tốt (0)</button><button id="r-f-entry" onclick="setV6Mode('r','entry')">🎯 Vào lệnh ngay (0)</button></div><div class="row" style="font-size:12px"><label><input type="checkbox" id="r-nojunk" onchange="saveV6Filter('r')"> 🚫 Loại coin rác</label><label><input type="checkbox" id="r-nomanip" onchange="saveV6Filter('r')"> 🛡️ Loại thao túng giá</label></div></div><select id="r-flt-mode" style="display:none"><option value="all">all</option></select>
         <div class="tbl-wrap" style="max-height:200px">
           <table id="tbl-sb"><thead><tr><th>Mã</th><th>Tín hiệu</th><th>Tăng %</th><th>Giá TG thực</th><th>Hồi về TG thực</th><th>15m 1h 4h 1d</th></tr></thead><tbody></tbody></table>
         </div>
         <div class="row">
           <button id="btn-smart-right" class="b-xxx" disabled onclick="smartOrderClick('right')">XXX</button>
-          <button class="b-acc" onclick="sendSymToTest(sbSel||curSym,'right')">💹 Sang TEST</button>
+          <button class="b-acc" onclick="sendSymToTest(sbSel||curSym,'right')">💹 Sang TEST</button><select id="r-ptkt-mode" onchange="setPtktMode(this.value)" style="margin-left:auto"><option value="both">Gốc + PTKT v627</option><option value="v627">PTKT v627</option><option value="orig">PTKT Gốc</option></select>
         </div>
-        <pre id="sb-detail" class="plan" style="max-height:250px">Bấm 'Quét' để phân tích đa khung 15m · 1h · 4h · 1d.</pre>
+        <pre id="sb-detail" class="plan" style="max-height:220px">Bấm 'Quét' để phân tích đa khung 15m · 1h · 4h · 1d.</pre><div id="r-v627-host"></div>
       </div>
     </div>
   </div>
@@ -326,8 +337,8 @@ canvas{width:100%;display:block;background:var(--bg);border:1px solid var(--line
 </div>
 
 <div class="footer">
-  <div class="marquee"><span>Nguyễn Văn Hùng © Investment Radar Version 3.1.2 - Web Edition - Donnguyen6679@gmail.com - 0906735165 - Tây Ninh</span></div>
-  <span id="api-pill" class="pill up">API ● Sẵn sàng</span>
+  <div class="marquee"><span id="mq-span">Nguyễn Văn Hùng © Investment Radar Version 3.1.2 - Web Edition - Donnguyen6679@gmail.com - 0906735165 - Tây Ninh</span></div>
+  <div class="zbtn"><span id="dot-l" onclick="toggleZone('l')">● Trái</span><span id="mode-l" onclick="toggleZoneMode('l')">⚡</span></div><div class="zbtn"><span id="dot-c" onclick="toggleZone('c')">● Giữa</span><span id="mode-c" onclick="toggleZoneMode('c')">⚡</span></div><div class="zbtn"><span id="dot-r" onclick="toggleZone('r')">● Phải</span><span id="mode-r" onclick="toggleZoneMode('r')">⚡</span></div><div class="zbtn"><span id="dot-a" onclick="toggleZoneMode('a')">● PT phải</span></div><button onclick="openColorGui()" style="padding:2px 7px;font-size:11px">🎨 Color</button><span id="api-pill" class="pill up" onclick="diagnoseNet()">API ● Sẵn sàng</span>
   <span>console ›</span><input id="con-in" style="width:170px;padding:3px 7px" placeholder="help / on / off / clear" onkeydown="if(event.key==='Enter')runConsole()">
 </div>
 <div id="modal-bg" class="modal-bg" onclick="if(event.target===this)closeModal()"><div class="modal"><div class="modal-h"><span id="modal-t"></span><button onclick="closeModal()">✖</button></div><div class="modal-b" id="modal-b"></div></div></div>
@@ -892,5 +903,542 @@ window.addEventListener("DOMContentLoaded",()=>{
   if(appState.news_cache&&((appState.news_cache.news||[]).length||(appState.news_cache.cal||[]).length)){newsCal=appState.news_cache.cal||[];newsItems=appState.news_cache.news||[];renderNews();}
 });
 </script>
+
+<script>
+(()=>{
+if(window._v627WebInstalled)return;window._v627WebInstalled=true;
+
+const V6_MTF=["5m","15m","30m","1h","4h","1d"];
+IV_SEC["30m"]=1800;
+BG_TF["30m"]="30m";OKX_TF["30m"]="30m";
+
+Object.assign(THEMES,{
+  "macOS":{bg:"#ececec",card:"#ffffff",head:"#dfe3e8",fg:"#1d1d1f",mu:"#6e6e73",up:"#248a3d",dn:"#ff3b30",acc:"#007aff",amb:"#ff9500",line:"#d1d5db",sel:"#cce2ff",btn:"#e5e7eb"},
+  "Ubuntu":{bg:"#300a24",card:"#3d1232",head:"#4b183e",fg:"#eeeeec",mu:"#ad7fa8",up:"#8ae234",dn:"#ef2929",acc:"#e95420",amb:"#fcaf3e",line:"#5e2750",sel:"#772953",btn:"#4c1c40"},
+  "MS-DOS":{bg:"#000000",card:"#0a0a0a",head:"#141414",fg:"#c0c0c0",mu:"#808080",up:"#55ff55",dn:"#ff5555",acc:"#0000aa",amb:"#ffff55",line:"#333333",sel:"#000088",btn:"#1f1f1f"},
+  "Pascal":{bg:"#0000aa",card:"#000088",head:"#000066",fg:"#ffff55",mu:"#aaaaaa",up:"#55ff55",dn:"#ff5555",acc:"#00aaaa",amb:"#ffffff",line:"#2244cc",sel:"#00aaaa",btn:"#002299"},
+  "Android 17":{bg:"#141218",card:"#211f26",head:"#2b2930",fg:"#e6e0e9",mu:"#cac4d0",up:"#7ddc8f",dn:"#ff6b6b",acc:"#d0bcff",amb:"#ffb951",line:"#3b383e",sel:"#4f378b",btn:"#2b2930"},
+  "Console":{bg:"#0c0c0c",card:"#141414",head:"#1f1f1f",fg:"#cccccc",mu:"#767676",up:"#13a10e",dn:"#c50f1f",acc:"#3a96dd",amb:"#c19c00",line:"#2b2b2b",sel:"#264f78",btn:"#222222"},
+  "Basic":{bg:"#f0f0f0",card:"#ffffff",head:"#e0e0e0",fg:"#000000",mu:"#555555",up:"#008000",dn:"#cc0000",acc:"#0066cc",amb:"#996600",line:"#cccccc",sel:"#cce0ff",btn:"#dcdcdc"},
+  "Classic":{bg:"#c0c0c0",card:"#ffffff",head:"#d4d0c8",fg:"#000000",mu:"#404040",up:"#006400",dn:"#b00000",acc:"#000080",amb:"#804000",line:"#808080",sel:"#000080",btn:"#d4d0c8"},
+  "v6.2.7 Dark":{bg:"#0b1018",card:"#0f172a",head:"#182238",fg:"#e2e8f0",mu:"#94a3b8",up:"#22c55e",dn:"#ef4444",acc:"#38bdf8",amb:"#fbbf24",line:"#253348",sel:"#1e3a5f",btn:"#1e293b"},
+  "v6.2.7 Light":{bg:"#f1f5f9",card:"#ffffff",head:"#e2e8f0",fg:"#0f172a",mu:"#64748b",up:"#16a34a",dn:"#dc2626",acc:"#0284c7",amb:"#d97706",line:"#cbd5e1",sel:"#bae6fd",btn:"#e2e8f0"},
+  "Hacker (v6.2.7)":{bg:"#020803",card:"#041307",head:"#07200c",fg:"#4ade80",mu:"#16a34a",up:"#22ff66",dn:"#ff3b3b",acc:"#22c55e",amb:"#fbbf24",line:"#14532d",sel:"#14532d",btn:"#0b2e16"},
+  "Turbo Pascal (v6.2.7)":{bg:"#000084",card:"#0000a8",head:"#000068",fg:"#ffffff",mu:"#55ffff",up:"#55ff55",dn:"#ff5555",acc:"#00aaaa",amb:"#ffff55",line:"#2255cc",sel:"#00aaaa",btn:"#0000cc"},
+  "MS-DOS (v6.2.7)":{bg:"#000000",card:"#0b0b0b",head:"#161616",fg:"#e5e5e5",mu:"#808080",up:"#4ade80",dn:"#ef4444",acc:"#a0a0a0",amb:"#ffaa00",line:"#2d2d2d",sel:"#333333",btn:"#1f1f1f"},
+  "Amber CRT (v6.2.7)":{bg:"#090500",card:"#140b00",head:"#1f1100",fg:"#ffc433",mu:"#b45309",up:"#4ade80",dn:"#ef4444",acc:"#f59e0b",amb:"#fde68a",line:"#451a03",sel:"#78350f",btn:"#291600"},
+  "Cyber (v6.2.7)":{bg:"#0d0618",card:"#160b29",head:"#21113d",fg:"#f0e7ff",mu:"#a78bfa",up:"#00f5d4",dn:"#ff2a6d",acc:"#d946ef",amb:"#facc15",line:"#3b1d6a",sel:"#581c87",btn:"#2a144a"},
+  "Ocean (v6.2.7)":{bg:"#06141f",card:"#0b2234",head:"#102e46",fg:"#e0f2fe",mu:"#7dd3fc",up:"#2dd4bf",dn:"#fb7185",acc:"#0ea5e9",amb:"#fbbf24",line:"#1e405e",sel:"#0369a1",btn:"#133550"},
+  "Neon (v6.2.7)":{bg:"#070710",card:"#101020",head:"#191932",fg:"#f8fafc",mu:"#94a3b8",up:"#39ff14",dn:"#ff073a",acc:"#00e5ff",amb:"#ffe600",line:"#282848",sel:"#1e3a5f",btn:"#1d1d38"},
+  "Midnight (v6.2.7)":{bg:"#090d16",card:"#111827",head:"#1f2937",fg:"#f3f4f6",mu:"#9ca3af",up:"#10b981",dn:"#f43f5e",acc:"#6366f1",amb:"#f59e0b",line:"#374151",sel:"#312e81",btn:"#1f2937"}
+});
+
+const EFFECTS=[["pulse","Pulse · Nhấp nháy nhẹ"],["rainbow","Rainbow · Cầu vồng"],["glow","Glow · Phát sáng Neon"],["wave","Wave · Gợn sóng"],["bounce","Bounce · Qua lại"],["static","Static · Đứng yên"]];
+const PTKT_META=[["tp","🎯 TP / SL / Vào lệnh ngay","#00e676"],["obos","⚠️ Quá mua / Quá bán (RSI)","#ef4444"],["rebound","🔄 Hồi về / Retest / Fibo","#fbbf24"],["reversal","🔺🔻 Đảo chiều & Hội tụ đa khung","#ff8c00"],["div","📐 Phân kỳ (RSI / CVD)","#e040fb"],["trap","🪤 Bẫy giá (Bull / Bear Trap)","#ff1744"],["sr","🧱 Kháng cự / Hỗ trợ / Thủng","#ffd400"],["flow","🐳 Dòng tiền / Tin mạnh","#38bdf8"]];
+const COLOR_VI={do:"#ff1744",vang:"#ffd400",cam:"#ff8c00",xanhla:"#00e676",xanhduong:"#2979ff",xanh:"#00e5ff",tim:"#b24dff",hong:"#ff4da6",trang:"#ffffff",den:"#000000"};
+const ZNAME={l:"Trái",c:"Giữa",r:"Bảng quét phải",a:"PT phải"};
+
+function defFx(col="#fbbf24",fgc="#fbbf24",bdc="#fbbf24"){return{v627_on:false,bg_on:false,enabled:false,effect:"pulse",use_side_colors:true,color:col,long_color:"#22c55e",short_color:"#ef4444",neutral_color:"#38bdf8",opacity:100,speed_ms:1000,fg_on:false,fg_effect:"pulse",fg_use_side:true,fg_color:fgc,fg_long:"#4ade80",fg_short:"#fb7185",fg_neutral:"#fbbf24",fg_opacity:100,fg_speed_ms:1000,bd_on:false,bd_effect:"pulse",bd_use_side:true,bd_color:bdc,bd_long:"#22c55e",bd_short:"#ef4444",bd_neutral:"#fbbf24",bd_opacity:100,bd_speed_ms:1000,bd_width:1,on_signals:true};}
+function defZone(){return{color:"#ffb74d",alpha:100,ms:600,multi:false,colors:["#ffb74d","#ff1744","#2979ff"],alt:false,alt_ms:400,static:false};}
+function defMidTop(){return{...defFx("#38bdf8","#38bdf8","#38bdf8"),def_on:false,def_static:false,def_color:"#fbbf24",def_opacity:85,def_speed_ms:900,main_headers:true,sub_headers:true};}
+function defV627(){
+  const pi={};PTKT_META.forEach(([k,_,c])=>pi[k]=defFx(c,c,c));
+  return{
+    ptkt_mode:"both",mid_col:false,r_col:false,blink_l:true,blink_c:true,blink_r:true,blink_notify:false,
+    def_zones:{l:true,c:true,r:true,a:true},
+    def_side:{l:{on:false,long:"#22c55e",short:"#ef4444",neu:"#38bdf8"},c:{on:false,long:"#22c55e",short:"#ef4444",neu:"#38bdf8"},r:{on:false,long:"#22c55e",short:"#ef4444",neu:"#38bdf8"},a:{on:false,long:"#22c55e",short:"#ef4444",neu:"#38bdf8"}},
+    bz:{l:defZone(),c:defZone(),r:defZone(),a:{...defZone(),static:true}},
+    tp_fmt:{on:true,bold:true,size:13,long:"#00e676",short:"#ff1744",blink:false,ms:500,bg:false,bg_long:"#00e676",bg_short:"#ff1744",alpha:100},
+    v627_blink:{...defFx(),marquee_fx:true,ptkt_warn_fx:true,tables_fx:true},
+    v627_zones:{l:defFx(),c:defFx(),r:defFx(),a:defFx()},
+    v627_tp:defFx("#22c55e","#4ade80","#22c55e"),
+    v627_ptkt_items:pi,v627_ptkt_scope:{mid:true,right:true,f4:true},v627_ptkt_def_on:true,v627_ptkt_v627_on:true,v627_mid_top:defMidTop(),
+    flt_sides:{l:{mode:"all",no_junk:false,no_manip:false,collapsed:true,sort:"score",rev:true},r:{mode:"all",no_junk:false,no_manip:false,collapsed:false,sort:"score",rev:true}},
+    col_notif:{l:{toast:true,sound:true,entry:true,rebound:true,verdict:true,find_blink:true},r:{toast:true,sound:true,entry:true,rebound:true,plan:true,find_blink:true}},
+    notif:{toast:true,sound:true,entry:true,rebound:true,price:true,browser:false},reb_watch:{}
+  };
+}
+
+let ptktMap={},mtfInflight={},pinnedSym=null,f4Sym=null,f4Flt="all",findBlink={l:null,r:null},apiLastDt=0,apiLastErr="",cgActiveTab=0;
+
+function hydrateV627(){
+  const d=defV627();
+  if(!appState.v627||typeof appState.v627!=="object")appState.v627=d;
+  else appState.v627={...d,...appState.v627,bz:{...d.bz,...(appState.v627.bz||{})},v627_zones:{...d.v627_zones,...(appState.v627.v627_zones||{})},v627_ptkt_items:{...d.v627_ptkt_items,...(appState.v627.v627_ptkt_items||{})},flt_sides:{...d.flt_sides,...(appState.v627.flt_sides||{})},v627_mid_top:{...d.v627_mid_top,...(appState.v627.v627_mid_top||{})},col_notif:{...d.col_notif,...(appState.v627.col_notif||{})},notif:{...d.notif,...(appState.v627.notif||{})},def_zones:{...d.def_zones,...(appState.v627.def_zones||{})},def_side:{...d.def_side,...(appState.v627.def_side||{})},tp_fmt:{...d.tp_fmt,...(appState.v627.tp_fmt||{})},v627_blink:{...d.v627_blink,...(appState.v627.v627_blink||{})}};
+  try{
+    if(INITIAL_STATE&&!localStorage.getItem("hn_radar_web_v3")){
+      const c=INITIAL_STATE.cfg||{};
+      if(c.clock12!==undefined)appState.clock12=!!c.clock12;
+      if(c.blink!==undefined)appState.blink=!!c.blink;
+      if(c.blink_l!==undefined)appState.v627.blink_l=!!c.blink_l;
+      if(c.blink_c!==undefined)appState.v627.blink_c=!!c.blink_c;
+      if(c.blink_r!==undefined)appState.v627.blink_r=!!c.blink_r;
+      if(c.blink_zones)appState.v627.bz={...appState.v627.bz,...c.blink_zones};
+      if(c.tp_fmt)appState.v627.tp_fmt={...appState.v627.tp_fmt,...c.tp_fmt};
+      if(INITIAL_STATE.v627){
+        const v=INITIAL_STATE.v627;
+        appState.v627={...appState.v627,...v,bz:{...appState.v627.bz,...(v.bz||{})},v627_zones:{...appState.v627.v627_zones,...(v.v627_zones||{})},v627_ptkt_items:{...appState.v627.v627_ptkt_items,...(v.v627_ptkt_items||{})},flt_sides:{...appState.v627.flt_sides,...(v.flt_sides||{})},v627_mid_top:{...appState.v627.v627_mid_top,...(v.v627_mid_top||{})}};
+        if(Array.isArray(v.alerts)&&!(appState.master.price_alerts||[]).length){
+          appState.master.price_alerts=v.alerts.map(a=>({id:a.id||Date.now(),sym:a.symbol||a.sym,cond:a.cond||">=",target:a.target,suggestion:a.suggestion||"LONG",note:a.note||"",repeat:!!a.repeat,active:a.enabled!==false}));
+        }
+      }
+    }
+  }catch(_){}
+  const selT=byId("sel-theme");
+  if(selT){const cur=appState.theme||"Mặc định";selT.innerHTML=Object.keys(THEMES).map(t=>`<option ${t===cur?'selected':''}>${t}</option>`).join("");}
+}
+hydrateV627();
+
+const _origToast=toast;
+toast=function(msg,ms=3400){_origToast(msg,ms);if(appState.v627?.notif?.browser&&typeof Notification!=="undefined"&&Notification.permission==="granted"&&ms>=5000){try{new Notification("HungNguyen-Radar Master",{body:msg});}catch(_){}}};
+
+const _origFetchJson=fetchJson;
+fetchJson=async function(url,ms=10000){
+  const t0=performance.now();
+  try{
+    const res=await _origFetchJson(url,ms);
+    apiLastDt=Math.round(performance.now()-t0);apiLastErr="";
+    if(byId("r-lat-lbl"))byId("r-lat-lbl").textContent=`⚡ ${apiLastDt} ms`;
+    return res;
+  }catch(e){
+    apiLastErr=e.message;
+    if(byId("r-lat-lbl"))byId("r-lat-lbl").textContent="⚡ API Lỗi";
+    throw e;
+  }
+};
+const _origUpdateExBtn=updateExBtn;
+updateExBtn=function(ex,ok){
+  _origUpdateExBtn(ex,ok);
+  const p=byId("api-pill");
+  if(p&&!appState.demo&&ok&&apiLastDt>0)p.textContent=`API ● ${ex.toUpperCase()} ${apiLastDt}ms`;
+};
+const _origToggleBlink=toggleBlink;
+toggleBlink=function(){_origToggleBlink();updateBlinkDots();fxRenderTick();};
+
+function padKlinesV627(rows,tf,limit=300){
+  if(!rows||!rows.length||rows.length>=100)return rows;
+  const target=Math.min(200,Math.max(100,limit)),step=(IV_SEC[tf]||3600)*1000,t0=rows[0].t,o=rows[0].o,need=target-rows.length,pad=[];
+  for(let i=need;i>0;i--)pad.push({t:t0-step*i,o,h:o,l:o,c:o,v:0,qv:0,tb:0});
+  return pad.concat(rows);
+}
+function rsiArr(C,p=14){const n=C.length,out=new Array(n).fill(50);if(n<=p)return out;let g=0,l=0;for(let i=1;i<=p;i++){const d=C[i]-C[i-1];if(d>=0)g+=d;else l-=d;}g/=p;l/=p;out[p]=l===0?100:100-100/(1+g/l);for(let i=p+1;i<n;i++){const d=C[i]-C[i-1];g=(g*(p-1)+Math.max(d,0))/p;l=(l*(p-1)+Math.max(-d,0))/p;out[i]=l===0?100:100-100/(1+g/l);}return out;}
+function storePt(sym,iv,pt){if(!ptktMap[sym])ptktMap[sym]={mtf:{},main:null};ptktMap[sym].mtf[iv]=pt;if(iv==="15m"||!ptktMap[sym].main)ptktMap[sym].main=pt;}
+function getPt(sym,iv=null){const s=ptktMap[sym];if(!s)return null;if(iv&&s.mtf[iv])return s.mtf[iv];return s.main||s.mtf["15m"]||s.mtf["1h"]||null;}
+
+function analyzeKlinesV627(sym,iv,df){
+  if(!df||df.length<18)return null;const d=df.filter(x=>x.c>0);if(d.length<18)return null;
+  const O=d.map(x=>x.o),H=d.map(x=>x.h),L=d.map(x=>x.l),C=d.map(x=>x.c),V=d.map(x=>x.v),n=C.length,price=(livePrices[sym]>0)?livePrices[sym]:C[n-1];if(!(price>0))return null;
+  const rs=rsiArr(C,14),rsi=rs[n-1],prevRsi=n>=2?rs[n-2]:rsi,e20=emaSeries(C,20)[n-1],e50=emaSeries(C,50)[n-1],e12=emaSeries(C,12),e26=emaSeries(C,26),macd=e12.map((v,i)=>v-e26[i]),sig=emaSeries(macd,9),hist=macd[n-1]-sig[n-1],prevHist=n>=2?(macd[n-2]-sig[n-2]):hist;
+  const bbS=C.slice(-20),bbMid=bbS.reduce((a,b)=>a+b,0)/bbS.length,bbStd=Math.sqrt(bbS.reduce((a,x)=>a+(x-bbMid)*(x-bbMid),0)/bbS.length),bbU=bbMid+2*bbStd,bbL=bbMid-2*bbStd;
+  let atr=0,ac=0;for(let i=Math.max(1,n-14);i<n;i++){atr+=Math.max(H[i]-L[i],Math.abs(H[i]-C[i-1]),Math.abs(L[i]-C[i-1]));ac++;}atr=(ac?atr/ac:price*0.01)||price*0.01;
+  const swH=Math.max(...H.slice(-30)),swL=Math.min(...L.slice(-30)),swH10=Math.max(...H.slice(-10)),swL10=Math.min(...L.slice(-10)),vr=V.slice(-21,-1).filter(x=>x>0),avgV=vr.length?vr.reduce((a,b)=>a+b,0)/vr.length:0,volRatio=avgV?V[n-1]/avgV:1;
+  let bearDiv=false,bullDiv=false;if(n>=28){let pH=-1,pHi=n-28,rH=-1,rHi=n-6,pL=Infinity,pLi=n-28,rL=Infinity,rLi=n-6;for(let i=n-28;i<n-6;i++){if(H[i]>pH){pH=H[i];pHi=i;}if(L[i]<pL){pL=L[i];pLi=i;}}for(let i=n-6;i<n;i++){if(H[i]>rH){rH=H[i];rHi=i;}if(L[i]<rL){rL=L[i];rLi=i;}}if(pH>0&&rH>pH*1.001&&rs[rHi]<rs[pHi]-2.5&&rsi>=56)bearDiv=true;if(pL>0&&rL<pL*0.999&&rs[rLi]>rs[pLi]+2.5&&rsi<=44)bullDiv=true;}
+  let zone="NEU",zoneLabel="Trung tính",zoneClass="neu";
+  if(rsi>=70){zone="OB";zoneLabel=rsi>=80?"⚠️ QUÁ MUA CỰC ĐỘ":"⚠️ QUÁ MUA";zoneClass="ob";}else if(rsi<=30){zone="OS";zoneLabel=rsi<=20?"⚠️ QUÁ BÁN CỰC ĐỘ":"⚠️ QUÁ BÁN";zoneClass="os";}else if(rsi>=62){zone="NEAR_OB";zoneLabel="📈 Cận quá mua";zoneClass="warn";}else if(rsi<=38){zone="NEAR_OS";zoneLabel="📉 Cận quá bán";zoneClass="warn";}
+  let rebDir="DOWN",rebCond="<=",rebSug="CHỜ TEST",rebT1=e20,rebT2=e50,rebBasis="";
+  if(zone==="OB"||zone==="NEAR_OB"||price>bbU*0.996||price>e20+0.9*atr){
+    const f38=price-0.382*Math.max(0,price-swL),f50=price-0.5*Math.max(0,price-swL),cd=[e20,bbMid,f38,e50,f50].filter(x=>Number.isFinite(x)&&x>0&&x<price*0.998).sort((a,b)=>b-a);
+    rebT1=cd[0]||(price-Math.max(atr*0.9,price*0.012));rebT2=cd[1]||Math.min(rebT1*0.988,price-Math.max(atr*1.6,price*0.022));if(rebT2>rebT1)rebT2=rebT1*0.99;
+    rebBasis=zone==="OB"?"Quá mua → Hồi về EMA20 / Fibo":"Kéo giãn → Hồi về EMA20 / BB Mid";rebSug=e20>=e50?"LONG":"CHỜ TEST";
+  }else if(zone==="OS"||zone==="NEAR_OS"||price<bbL*1.004||price<e20-0.9*atr){
+    rebDir="UP";rebCond=">=";const f38=price+0.382*Math.max(0,swH-price),f50=price+0.5*Math.max(0,swH-price),cd=[e20,bbMid,f38,e50,f50].filter(x=>Number.isFinite(x)&&x>price*1.002).sort((a,b)=>a-b);
+    rebT1=cd[0]||(price+Math.max(atr*0.9,price*0.012));rebT2=cd[1]||Math.max(rebT1*1.012,price+Math.max(atr*1.6,price*0.022));if(rebT2<rebT1)rebT2=rebT1*1.01;
+    rebBasis=zone==="OS"?"Quá bán → Hồi tăng về EMA20 / Fibo":"Chiết khấu → Hồi về EMA20 / BB Mid";rebSug=e20<=e50?"SHORT":"CHỜ TEST";
+  }else if(e20>=e50){rebT1=e20<price*0.997?e20:(price-Math.max(atr*0.7,price*0.008));rebT2=e50<rebT1*0.996?e50:(rebT1-Math.max(atr*0.8,price*0.01));rebBasis="Xu hướng tăng → Hồi test hỗ trợ EMA20";rebSug="LONG";}
+  else{rebDir="UP";rebCond=">=";rebT1=e20>price*1.003?e20:(price+Math.max(atr*0.7,price*0.008));rebT2=e50>rebT1*1.004?e50:(rebT1+Math.max(atr*0.8,price*0.01));rebBasis="Xu hướng giảm → Hồi test kháng cự EMA20";rebSug="SHORT";}
+  const rebPct=(rebT1-price)/price*100;
+  let revDir="NEU",revLabel="",revTrigger=e20,revTarget=rebT1;
+  if(zone==="OB"||bearDiv||(zone==="NEAR_OB"&&(rsi<prevRsi||hist<prevHist))||price>=bbU*0.997){revDir="DOWN";const c=(rsi>=70&&(rsi<prevRsi||hist<prevHist||C[n-1]<O[n-1]))||bearDiv;revLabel=(c?"🔻 Đảo chiều GIẢM":"🔻 Sắp ĐC GIẢM")+(bearDiv?" (Phân kỳ)":"");revTrigger=Math.max(swH10,bbU,price);revTarget=rebT1<price?rebT1:(price-Math.max(atr*1.1,price*0.012));}
+  else if(zone==="OS"||bullDiv||(zone==="NEAR_OS"&&(rsi>prevRsi||hist>prevHist))||price<=bbL*1.003){revDir="UP";const c=(rsi<=30&&(rsi>prevRsi||hist>prevHist||C[n-1]>O[n-1]))||bullDiv;revLabel=(c?"🔺 Đảo chiều TĂNG":"🔺 Sắp ĐC TĂNG")+(bullDiv?" (Phân kỳ)":"");revTrigger=Math.min(swL10,bbL,price);revTarget=rebT1>price?rebT1:(price+Math.max(atr*1.1,price*0.012));}
+  else if(prevHist>0&&hist<=0){revDir="DOWN";revLabel="🔻 Chớm ĐC GIẢM (MACD)";revTrigger=price;revTarget=Math.min(e20,price-atr);}
+  else if(prevHist<0&&hist>=0){revDir="UP";revLabel="🔺 Chớm ĐC TĂNG (MACD)";revTrigger=price;revTarget=Math.max(e20,price+atr);}
+  else if(e20>=e50){revDir="NEU_UP";revLabel="📈 Giữ tăng (ĐC nếu thủng)";revTrigger=e20;revTarget=e50;}
+  else{revDir="NEU_DN";revLabel="📉 Giữ giảm (ĐC nếu vượt)";revTrigger=e20;revTarget=e50;}
+  let lSc=0,sSc=0;
+  if(e20>e50&&price>=e20*0.992)lSc+=25;if((hist>0&&hist>=prevHist)||(prevHist<=0&&hist>0))lSc+=20;if((42<=rsi&&rsi<=66&&rsi>=prevRsi)||(prevRsi<=32&&rsi>prevRsi))lSc+=20;if(volRatio>=1.15)lSc+=15;if(C[n-1]>O[n-1])lSc+=10;if(price<=e20+1.1*atr&&rsi<71)lSc+=10;
+  if(e20<e50&&price<=e20*1.008)sSc+=25;if((hist<0&&hist<=prevHist)||(prevHist>=0&&hist<0))sSc+=20;if((34<=rsi&&rsi<=58&&rsi<=prevRsi)||(prevRsi>=68&&rsi<prevRsi))sSc+=20;if(volRatio>=1.15)sSc+=15;if(C[n-1]<O[n-1])sSc+=10;if(price>=e20-1.1*atr&&rsi>29)sSc+=10;
+  const bestDir=lSc>=sSc?"LONG":"SHORT",bestScore=Math.max(lSc,sSc),readyNow=bestScore>=75;
+  return{sym,iv,price,rsi,ema20:e20,ema50:e50,atr,zone,zoneLabel,zoneClass,rebDir,rebT1,rebT2,rebPct,rebBasis,rebCond,rebSug,bearDiv,bullDiv,revDir,revLabel,revTrigger,revTarget,bestDir,bestScore,readyNow,slPx:bestDir==="LONG"?price-1.5*atr:price+1.5*atr,tpPx:bestDir==="LONG"?price+2.6*atr:price-2.6*atr,ts:Date.now()};
+}
+const _origApiKlines=apiKlines;
+apiKlines=async function(sym,tf,limit=300){let rows=await _origApiKlines(sym,tf,limit);rows=padKlinesV627(rows,tf,limit);const pt=analyzeKlinesV627(sym,tf,rows);if(pt)storePt(sym,tf,pt);return rows;};
+window.ensureMtfV6=async function(sym,force=false){if(!sym)return;const now=Date.now(),todo=V6_MTF.filter(tf=>{const p=getPt(sym,tf),k=sym+"_"+tf;return(force||!p||now-p.ts>90000)&&(now-(mtfInflight[k]||0)>12000);});if(!todo.length)return;todo.forEach(tf=>mtfInflight[sym+"_"+tf]=now);await Promise.all(todo.map(tf=>apiKlines(sym,tf,120).catch(()=>null)));renderAllV6Cards(sym);};
+
+function classifyPtLine(txt,tag){
+  const u=String(txt||"").toUpperCase();let sd="neu";
+  if((u.includes("LONG")||u.includes("TĂNG")||u.includes("TANG")||u.includes("DƯƠNG")||u.includes("QUÁ BÁN")||u.includes("BEAR TRAP")||u.includes("QUÉT ĐÁY")||u.includes("HỒI KỸ THUẬT LÊN")||u.includes("MUA"))&&!u.includes("QUÁ MUA")&&!u.includes("ĐIỀU CHỈNH")&&!u.includes("ĐẢO CHIỀU GIẢM")&&!u.includes("PHÂN KỲ ÂM"))sd="long";
+  else if(u.includes("SHORT")||u.includes("GIẢM")||u.includes("GIAM")||u.includes("ÂM")||u.includes("QUÁ MUA")||u.includes("BULL TRAP")||u.includes("QUÉT ĐỈNH")||u.includes("ĐIỀU CHỈNH VỀ")||u.includes("BÁN"))sd="short";
+  let pt="";
+  if(tag==="tpl"||tag==="tps"||["TP1","TP2","SL:","VÀO:","ENTRY","→ LONG","→ SHORT"].some(k=>u.includes(k)))pt="tp";
+  else if(u.includes("QUÁ MUA")||u.includes("QUÁ BÁN"))pt="obos";
+  else if(["HỒI VỀ","PULL BACK","ĐIỀU CHỈNH VỀ","HỒI KỸ THUẬT","RETEST","HỒI FIB"].some(k=>u.includes(k)))pt="rebound";
+  else if(["ĐẢO CHIỀU","SẮP ĐC","CHỚM ĐC","HỘI TỤ"].some(k=>u.includes(k)))pt="reversal";
+  else if(u.includes("PHÂN KỲ"))pt="div";
+  else if(["BULL TRAP","BEAR TRAP","QUÉT ĐÁY","QUÉT ĐỈNH","BẪY GIÁ"].some(k=>u.includes(k)))pt="trap";
+  else if(["KHÁNG CỰ","HỖ TRỢ","THỦNG"].some(k=>u.includes(k)))pt="sr";
+  else if(["DÒNG TIỀN","OI","FUNDING","SỔ LỆNH","TIN MẠNH","ĐỒNG THUẬN","NGHIÊNG"].some(k=>u.includes(k)))pt="flow";
+  if(tag==="h")pt="mid_h";else if(txt.startsWith("[Dòng tiền]"))pt="mid_sub";
+  return{pt,sd};
+}
+renderLines=function(el,lines,scope){
+  const sc=scope||(el.id==="sb-detail"?"right":el.id==="f4-det"?"f4":"mid");
+  el.innerHTML=lines.map(([t,g])=>{const{pt,sd}=classifyPtLine(t,g);return`<span class="pt-ln ${g?("ln-"+g):""}" data-sc="${sc}" data-pt="${pt}" data-tg="${g||''}" data-sd="${sd}">${esc(t)}</span>`;}).join("\n");
+};
+
+function classifyLeftSym(sym){const r=leftRes[sym];if(!r||r.error)return[false,false,false];const pt=getPt(sym);return[r.verdict!=="TRUNG LẬP / CHỜ"||Math.abs(r.total)>=2||(pt&&(pt.readyNow||pt.zone==="OB"||pt.zone==="OS")),Math.abs(r.total)>=4||(pt&&pt.bestScore>=72),(pt&&pt.readyNow)||Math.abs(r.total)>=5];}
+function classifyRightSym(sym){const o=rightRes[sym];if(!o||o.err)return[false,false,false];const pt=getPt(sym),hits=evalPullbackForSym(o,livePrices[sym]||o.px),trapDiv=TF2.some(t=>o.res[t].trap||o.res[t].div),dp=o.side==="SHORT"?(100-o.prob):o.prob;return[o.side!=="CHỜ"||hits.length>0||trapDiv||(pt&&(pt.readyNow||pt.zone==="OB"||pt.zone==="OS")),(o.side!=="CHỜ"&&dp>=72)||(pt&&pt.bestScore>=72)||TF2.every(t=>o.res[t].trend===o.res[TF2[0]].trend&&o.res[t].trend!=="sw"),(pt&&pt.readyNow)||(o.side!=="CHỜ"&&dp>=78)];}
+function v6SortVal(side,sym){const f=appState.v627.flt_sides[side],pt=getPt(sym),m=tickerMeta[sym];if(f.sort==="az")return sym;if(f.sort==="pct")return m?m.chg:(side==="r"&&rightRes[sym]?rightRes[sym].prob:0);if(f.sort==="entry")return((pt&&pt.readyNow)?1:0)*10000+(pt?pt.bestScore:0)*100+(side==="l"?Math.abs(leftRes[sym]?.total||0):(rightRes[sym]?.prob||0));return side==="l"?Math.abs(leftRes[sym]?.total||0):Math.abs(rightRes[sym]?.agg||0);}
+
+window.toggleV6Sort=function(side,sk){const f=appState.v627.flt_sides[side];if(f.sort===sk)f.rev=!f.rev;else{f.sort=sk;f.rev=(sk!=="az");}saveState();side==="l"?renderLeftTable():renderSbTable();};
+window.setV6Mode=function(side,m){appState.v627.flt_sides[side].mode=m;saveState();side==="l"?renderLeftTable():renderSbTable();};
+window.saveV6Filter=function(side){const f=appState.v627.flt_sides[side];f.no_junk=byId(side+"-nojunk").checked;f.no_manip=byId(side+"-nomanip").checked;saveState();side==="l"?renderLeftTable():renderSbTable();};
+window.toggleColCollapse=function(side){const f=appState.v627.flt_sides[side];f.collapsed=!f.collapsed;byId(side+"-flt-body").style.display=f.collapsed?"none":"flex";byId(side+"-col-btn").textContent=f.collapsed?"▽":"▲";saveState();};
+
+function updateColToolbarUI(side,cAll,cSig,cGood,cEnt,shown){
+  const f=appState.v627.flt_sides[side];
+  [["all",`Tất cả (${cAll})`],["signal",`⚡ Đang có tín hiệu (${cSig})`],["good",`⭐ Tín hiệu tốt (${cGood})`],["entry",`🎯 Vào lệnh ngay (${cEnt})`]].forEach(([k,t])=>{const b=byId(`${side}-f-${k}`);if(b){b.textContent=t;b.classList.toggle("act",f.mode===k);}});
+  const ar=f.rev?"▼":"▲";[["az","Az"],["score","⇅"],["pct","%"],["entry","🎯"]].forEach(([k,t])=>{const b=byId(`${side}-s-${k}`);if(b){b.textContent=t+(f.sort===k?ar:"");b.classList.toggle("act",f.sort===k);}});
+  const ml={all:"Tất cả",signal:"Có tín hiệu",good:"Tín hiệu tốt",entry:"Vào ngay"}[f.mode]||"Tất cả";
+  const sl=byId(`${side}-flt-sum`);if(sl)sl.textContent=`Lọc: ${ml} (${shown}/${cAll})${f.no_junk?" 🚫":""}${f.no_manip?" 🛡️":""}`;
+  const cn=appState.v627.col_notif[side],fl=side==="l"?appState.v627.blink_l:appState.v627.blink_r,bb=byId(`${side}-bell-btn`);
+  if(bb)bb.textContent=(fl||cn.toast||cn.entry||cn.rebound)?"🔔":"🔕";
+}
+
+window.triggerFindBlink=function(sym,side=null){
+  sym=normSym(sym);if(!sym)return;const sides=side?[side]:["l","r"],until=Date.now()+5500;
+  sides.forEach(sd=>{const f=appState.v627.flt_sides[sd],map=sd==="l"?leftRes:rightRes;if(map[sym]){f.mode="all";f.no_junk=false;f.no_manip=false;if(byId(sd+"-nojunk"))byId(sd+"-nojunk").checked=false;if(byId(sd+"-nomanip"))byId(sd+"-nomanip").checked=false;}if(appState.v627.col_notif[sd].find_blink)findBlink[sd]={sym,until};});
+  if(side!=="r"&&leftRes[sym])selectSym(sym);if(side!=="l"&&rightRes[sym])selectSb(sym);renderLeftTable();renderSbTable();
+  const rowEl=document.querySelector(`#${side==="r"?"tbl-sb":"tbl-left"} tr[data-sym="${sym}"]`);if(rowEl)rowEl.scrollIntoView({block:"nearest",behavior:"smooth"});
+};
+
+renderLeftTable=function(){
+  setTimeout(()=>updateSmartBtn("left"),0);const tb=document.querySelector("#tbl-left tbody"),favSet=new Set(appState.fav||[]),f=appState.v627.flt_sides.l;
+  let cAll=0,cSig=0,cGood=0,cEnt=0,vis=[],errs=[];
+  Object.keys(leftRes).forEach(sym=>{const r=leftRes[sym];if(!r)return;if(r.error){errs.push(sym);return;}const j=f.no_junk&&isJunkPair(sym),mp=f.no_manip&&(r.manip||detectManipulation(sym,[]).manip),[sig,gd,ent]=classifyLeftSym(sym);if(!j&&!mp){cAll++;if(sig)cSig++;if(gd)cGood++;if(ent)cEnt++;}let ok=!j&&!mp;if(ok&&f.mode==="signal")ok=sig;else if(ok&&f.mode==="good")ok=gd;else if(ok&&f.mode==="entry")ok=ent;if(ok)vis.push(sym);});
+  vis.sort((a,b)=>{if(leftSortCol&&leftSortCol!=="sym"&&leftSortCol!=="total"){const ra=leftRes[a],rb=leftRes[b],va=leftSortCol==="px"?ra.price:ra.verdict,vb=leftSortCol==="px"?rb.price:rb.verdict;return(va<vb?-1:va>vb?1:0)*(leftSortRev?-1:1);}const va=v6SortVal("l",a),vb=v6SortVal("l",b);return(va<vb?-1:va>vb?1:0)*(f.rev?-1:1);});
+  updateColToolbarUI("l",cAll,cSig,cGood,cEnt,vis.length);if(byId("l-stat"))byId("l-stat").textContent=`Hiện ${vis.length}/${cAll}`;
+  tb.innerHTML=vis.concat(errs).map(sym=>{const r=leftRes[sym];if(r.error)return`<tr data-sym="${sym}" onclick="selectSym('${sym}')"><td>${favSet.has(sym)?'★ ':''}${sym}</td><td colspan="4" class="dn">${esc(r.error)}</td></tr>`;const sd=r.verdict.includes("LONG")?"long":r.verdict.includes("SHORT")?"short":"neu",cls=sd==="long"?"up":sd==="short"?"dn":"neu",trs=Object.entries(r.perTf).map(([t,x])=>`${t}:${x.trend.split(" ")[0]}`).join(" "),warn=(r.junk?" 🗑":"")+(r.manip?" ⚠TT":""),hit=(favSet.has(sym)&&sbHitSet.has(sym))?"1":"0";return`<tr data-sym="${sym}" data-fx-side="${sd}" data-fx-hit="${hit}" class="${curSym===sym?'sel':''}" onclick="selectSym('${sym}')"><td><b>${favSet.has(sym)?'★ ':''}${sym}</b><span class="amb">${warn}</span></td><td>${fpx(r.price)}</td><td class="${cls}">${r.verdict}</td><td class="${cls}">${r.total>=0?'+':''}${r.total.toFixed(1)}</td><td class="mu">${trs}</td></tr>`;}).join("");
+  fxRenderTick();
+};
+const _origSelectSym=selectSym;
+selectSym=async function(sym){renderAllV6Cards(sym);ensureMtfV6(sym);await _origSelectSym(sym);renderAllV6Cards(sym);};
+
+renderSbTable=function(){
+  setTimeout(()=>updateSmartBtn("right"),0);const tb=document.querySelector("#tbl-sb tbody"),favSet=new Set(appState.fav||[]),f=appState.v627.flt_sides.r;sbHitSet.clear();
+  let cAll=0,cSig=0,cGood=0,cEnt=0,vis=[],errs=[];
+  Object.keys(rightRes).forEach(sym=>{const o=rightRes[sym];if(!o)return;if(o.err){errs.push(sym);return;}const j=f.no_junk&&isJunkPair(sym),mp=f.no_manip&&(o.manip||detectManipulation(sym,[]).manip),[sig,gd,ent]=classifyRightSym(sym);if(!j&&!mp){cAll++;if(sig)cSig++;if(gd)cGood++;if(ent)cEnt++;}let ok=!j&&!mp;if(ok&&f.mode==="signal")ok=sig;else if(ok&&f.mode==="good")ok=gd;else if(ok&&f.mode==="entry")ok=ent;if(ok)vis.push(sym);});
+  vis.sort((a,b)=>{const va=v6SortVal("r",a),vb=v6SortVal("r",b);return(va<vb?-1:va>vb?1:0)*(f.rev?-1:1);});
+  updateColToolbarUI("r",cAll,cSig,cGood,cEnt,vis.length);
+  tb.innerHTML=vis.concat(errs).map(sym=>{const o=rightRes[sym];if(o.err)return`<tr data-sym="${sym}"><td>${sym}</td><td class="dn">Lỗi</td><td colspan="4">${esc(o.err)}</td></tr>`;const lv=livePrices[sym]||o.px,hits=evalPullbackForSym(o,lv),pt=getPt(sym);if(hits.length&&favSet.has(sym))sbHitSet.add(sym);const sd=o.side==="LONG"?"long":o.side==="SHORT"?"short":"neu",cls=sd==="long"?"up":sd==="short"?"dn":"neu",chips=TF2.map(t=>`${t} ${o.res[t].trend==="up"?"▲":o.res[t].trend==="dn"?"▼":"▬"}`).join(" "),warn=(o.junk?" 🗑":"")+(o.manip?" ⚠TT":""),exPB=[];if(hits.length)exPB.push("⚡ hồi "+hits.join(","));if(pt?.readyNow)exPB.push(`🎯${pt.bestDir} ${pt.bestScore}%`);if(pt?.zone==="OB")exPB.push(`⚠️QM ${pt.rsi.toFixed(0)}`);else if(pt?.zone==="OS")exPB.push(`⚠️QB ${pt.rsi.toFixed(0)}`);return`<tr data-sym="${sym}" data-fx-side="${sd}" data-fx-hit="${(favSet.has(sym)&&hits.length)?'1':'0'}" class="${sbSel===sym?'sel':''}" onclick="selectSb('${sym}')"><td><b>${favSet.has(sym)?'★ ':''}${sym}</b><span class="amb">${warn}</span></td><td class="${cls}">${o.side}</td><td>${o.prob}%</td><td>${fpx(lv)}</td><td class="${exPB.length?'amb':'mu'}">${exPB.join(" · ")||"—"}</td><td class="mu">${chips}</td></tr>`;}).join("");
+  if(sbSel&&rightRes[sbSel])selectSb(sbSel,false);fxRenderTick();
+};
+const _origSelectSb=selectSb;
+selectSb=function(sym,re=true){_origSelectSb(sym,re);ensureMtfV6(sym);renderAllV6Cards(sym);};
+
+function hasRebAlert(sym,tgt){if(!tgt)return false;return(appState.master.price_alerts||[]).some(a=>a.active&&a.sym===sym&&Math.abs(a.target-tgt)/tgt<0.005);}
+window.toggleRebAlert=function(sym){sym=normSym(sym||curSym);if(!sym)return toast("Chọn một mã!");const pt=getPt(sym);if(!pt)return toast("Đang tải PTKT "+sym);const t1=+pt.rebT1.toPrecision(6),idx=(appState.master.price_alerts||[]).findIndex(a=>a.active&&a.sym===sym&&Math.abs(a.target-t1)/t1<0.005);if(idx>=0){appState.master.price_alerts.splice(idx,1);toast(`🔕 Đã tắt báo hồi về ${sym}`);}else{appState.master.price_alerts.unshift({id:Date.now(),sym,cond:pt.rebCond,target:t1,suggestion:pt.rebSug,note:`Hồi về PTKT (${pt.zoneLabel} · RSI ${pt.rsi.toFixed(1)})`,repeat:false,active:true});toast(`🔔 Bật báo hồi về ${sym} ${pt.rebCond} $${fpx(t1)}`);}saveState();renderAllV6Cards(sym);};
+window.toggleTfAlert=function(sym,tf){const pt=getPt(sym,tf);if(!pt)return toast("Chưa có dữ liệu "+tf);const rawT=pt.revTarget||pt.rebT1,t1=+rawT.toPrecision(6),cond=t1<=pt.price?"<=":">=",sug=(pt.revDir==="UP"||pt.revDir==="NEU_UP")?"LONG":(pt.revDir==="DOWN"||pt.revDir==="NEU_DN")?"SHORT":"CHỜ TEST";const idx=(appState.master.price_alerts||[]).findIndex(a=>a.active&&a.sym===sym&&Math.abs(a.target-t1)/t1<0.004);if(idx>=0){appState.master.price_alerts.splice(idx,1);toast(`🔕 Tắt báo khung ${tf} (${sym})`);}else{appState.master.price_alerts.unshift({id:Date.now(),sym,cond,target:t1,suggestion:sug,note:`Đảo chiều khung ${tf} (${pt.revLabel})`,repeat:false,active:true});toast(`🔔 Bật báo ĐC khung ${tf} (${sym}) ${cond} $${fpx(t1)}`);}saveState();renderAllV6Cards(sym);};
+
+function buildV6CardHtml(sym,scope,collapsed=false,isPinned=false){
+  if(!sym)return`<div class="v6-card"><span class="mu">Chọn một mã để xem PTKT v6.2.7...</span></div>`;
+  const pt=getPt(sym),sData=ptktMap[sym]?.mtf||{},rebOn=pt?hasRebAlert(sym,pt.rebT1):false,colBtn=isPinned?"":`<button onclick="toggleV6CardCol('${scope}')">${collapsed?"▼ Mở":"▲ Thu gọn"}</button>`,pinBtn=isPinned?"":`<button onclick="openPinnedPtkt('${sym}')">📌 Ghim</button>`;
+  if(!pt)return`<div class="v6-card"><div class="row" style="justify-content:space-between"><b style="color:#38bdf8">📊 Chi tiết PTKT Cảnh báo & Hồi về (${sym})</b><div class="row">${pinBtn}${colBtn}</div></div><span class="mu">⏳ Đang tải dữ liệu PTKT 6 khung...</span></div>`;
+  const zColor=pt.zoneClass==="ob"?"#ef4444":pt.zoneClass==="os"?"#22c55e":pt.zoneClass==="warn"?"#fbbf24":"#38bdf8",obTfs=[],osTfs=[],upTfs=[],dnTfs=[];let loaded=0;
+  const rowsHtml=V6_MTF.map(tf=>{const p=sData[tf];if(!p)return`<tr><td><b>${tf}</b></td><td class="mu">⏳ …</td><td class="mu">Đang tải…</td><td></td></tr>`;loaded++;if(p.zone==="OB"||p.zone==="NEAR_OB")obTfs.push(`${tf}(${p.rsi.toFixed(0)})`);if(p.zone==="OS"||p.zone==="NEAR_OS")osTfs.push(`${tf}(${p.rsi.toFixed(0)})`);if(p.revDir==="UP")upTfs.push(tf);else if(p.revDir==="DOWN")dnTfs.push(tf);const zc=p.zoneClass==="ob"?"dn":p.zoneClass==="os"?"up":p.zoneClass==="warn"?"amb":"neu",rc=p.revDir==="UP"?"up":p.revDir==="DOWN"?"dn":"neu",tpx=p.revTarget||p.rebT1,saved=hasRebAlert(sym,tpx);return`<tr><td><b>${tf}</b></td><td class="${zc}">${p.zoneLabel} · ${p.rsi.toFixed(1)}</td><td><span class="${rc}">${p.revLabel}</span> → <b>$${fpx(tpx)}</b></td><td><button class="${saved?'b-up':''}" style="padding:2px 6px" onclick="toggleTfAlert('${sym}','${tf}')">${saved?"✅":"🔔"}</button></td></tr>`;}).join("");
+  const conv=(dnTfs.length>=2&&dnTfs.length>=upTfs.length)?`<span class="dn">🔻 Hội tụ ĐC GIẢM: ${dnTfs.join(", ")}</span>`:(upTfs.length>=2&&upTfs.length>dnTfs.length)?`<span class="up">🔺 Hội tụ ĐC TĂNG: ${upTfs.join(", ")}</span>`:`<span class="neu">⚖️ Chưa hội tụ mạnh đa khung</span>`;
+  const mini=`<div class="v6-mini"><div><span class="pill" style="color:${zColor}">${pt.zoneLabel} RSI ${pt.rsi.toFixed(1)}</span> Giá <b>$${fpx(pt.price)}</b> · 🔄 Hồi <b>$${fpx(pt.rebT1)}</b> (${pt.rebPct>=0?'+':''}${pt.rebPct.toFixed(1)}%) · ${pt.readyNow?`<b class="${pt.bestDir==='LONG'?'up':'dn'}">🎯 ${pt.bestDir} ${pt.bestScore}%</b>`:`<span class="neu">Chờ (${pt.bestScore}%)</span>`}</div><div class="row" style="justify-content:space-between"><button class="${rebOn?'b-up':''}" style="padding:2px 8px" onclick="toggleRebAlert('${sym}')">${rebOn?"✅ Đang canh":"🔔 Báo hồi về"}</button>${isPinned?"":`<button style="padding:2px 8px" onclick="toggleV6CardCol('${scope}')">${collapsed?"📊 Chi tiết ▼":"▲ Ẩn PTKT"}</button>`}</div></div>`;
+  if(collapsed)return mini;
+  return`<div class="v6-card"><div class="row" style="justify-content:space-between"><b style="color:#38bdf8">📊 Chi tiết PTKT Cảnh báo &amp; Hồi về (${sym})</b><div class="row">${pinBtn}${colBtn}</div></div><div class="row" style="justify-content:space-between"><span class="pill" style="color:${zColor};border:1px solid ${zColor}">${pt.zoneLabel} · RSI ${pt.rsi.toFixed(1)}</span><button class="${rebOn?'b-up':'b-acc'}" style="padding:3px 9px" onclick="toggleRebAlert('${sym}')">${rebOn?"✅ Đang canh hồi về":"🔔 Thông báo giá hồi về"} $${fpx(pt.rebT1)}</button></div><div class="v6-grid2"><div class="v6-box"><div class="mu" style="font-size:11px">RSI(14) &amp; Giá hiện tại</div><b>RSI: ${pt.rsi.toFixed(1)} · Giá: $${fpx(pt.price)}</b></div><div class="v6-box"><div class="mu" style="font-size:11px">Dự đoán hồi ${pt.rebDir==="DOWN"?"giảm":"tăng"} về</div><b class="amb">$${fpx(pt.rebT1)} (${pt.rebPct>=0?"+":""}${pt.rebPct.toFixed(2)}%) · M2: $${fpx(pt.rebT2)}</b></div></div><div class="mu" style="font-size:11px">📌 Cơ sở: <b style="color:var(--fg)">${pt.rebBasis}</b> (EMA20 $${fpx(pt.ema20)} · EMA50 $${fpx(pt.ema50)})</div><div class="v6-box">${pt.readyNow?`<b class="${pt.bestDir==='LONG'?'up':'dn'}">🎯 TÍN HIỆU TỐT VÀO LỆNH NGAY: ${pt.bestDir} (${pt.bestScore}%)</b><br>Entry: $${fpx(pt.price)} · SL: $${fpx(pt.slPx)} · TP: $${fpx(pt.tpPx)}`:`⏳ Chờ xác nhận thêm (<b>${pt.bestDir} ${pt.bestScore}%</b> · khung ${pt.iv})`}</div><div class="row" style="justify-content:space-between"><b class="amb">🕒 Quá mua/Bán &amp; Đảo chiều (${loaded}/6)</b><button style="padding:2px 7px" onclick="ensureMtfV6('${sym}',true)">🔄 Làm mới</button></div><div class="v6-box">🔴 Quá mua: <b>${obTfs.join(", ")||"Không"}</b> · 🟢 Quá bán: <b>${osTfs.join(", ")||"Không"}</b><br>${conv}</div><div class="tbl-wrap" style="max-height:200px"><table class="v6-mtf-tbl"><thead><tr><th>Khung</th><th>Quá mua/bán</th><th>Dự báo đảo chiều &amp; Giá</th><th></th></tr></thead><tbody>${rowsHtml}</tbody></table></div>${mini}</div>`;
+}
+window.toggleV6CardCol=function(scope){if(scope==="mid")appState.v627.mid_col=!appState.v627.mid_col;else appState.v627.r_col=!appState.v627.r_col;saveState();renderAllV6Cards();};
+window.setPtktMode=function(m){appState.v627.ptkt_mode=m;saveState();if(byId("mid-ptkt-mode"))byId("mid-ptkt-mode").value=m;if(byId("r-ptkt-mode"))byId("r-ptkt-mode").value=m;if(byId("center-detail"))byId("center-detail").style.display=(m==="v627")?"none":"block";if(byId("mid-v627-host"))byId("mid-v627-host").style.display=(m==="orig")?"none":"block";if(byId("sb-detail"))byId("sb-detail").style.display=(m==="v627")?"none":"block";if(byId("r-v627-host"))byId("r-v627-host").style.display=(m==="orig")?"none":"block";renderAllV6Cards();};
+function renderAllV6Cards(onlySym=null){
+  const mSym=curSym||parseSyms(byId("in-syms")?.value)[0],rSym=sbSel||mSym;
+  if(!onlySym||onlySym===mSym){const pt=getPt(mSym),mb=byId("mid-badge"),rb=byId("mid-reb-btn");if(mb&&pt){mb.textContent=`${mSym}: ${pt.zoneLabel} · RSI ${pt.rsi.toFixed(1)}`+(pt.readyNow?` · 🎯 ${pt.bestDir} ${pt.bestScore}%`:` · Hồi $${fpx(pt.rebT1)}`);mb.className=pt.zoneClass==="ob"?"dn":pt.zoneClass==="os"?"up":"amb";}if(rb&&pt)rb.textContent=(hasRebAlert(mSym,pt.rebT1)?"✅ Đang canh ":"🔔 Báo hồi về ")+"$"+fpx(pt.rebT1);if(byId("mid-v627-host"))byId("mid-v627-host").innerHTML=buildV6CardHtml(mSym,"mid",appState.v627.mid_col,false);}
+  if(!onlySym||onlySym===rSym){if(byId("r-v627-host"))byId("r-v627-host").innerHTML=buildV6CardHtml(rSym,"right",appState.v627.r_col,false);}
+  if(pinnedSym&&byId("pin-card-host")&&(!onlySym||onlySym===pinnedSym))byId("pin-card-host").innerHTML=buildV6CardHtml(pinnedSym,"pin",false,true);
+  if(f4Sym&&byId("f4-card-host")&&(!onlySym||onlySym===f4Sym))byId("f4-card-host").innerHTML=buildV6CardHtml(f4Sym,"f4",false,false);
+}
+
+window.openPinnedPtkt=function(sym=null){sym=normSym(sym||curSym||sbSel||"BTCUSDT");pinnedSym=sym;ensureMtfV6(sym);openModal(`📌 PTKT Đã Ghim · ${sym}`,`<div class="row"><button class="b-acc" onclick="ensureMtfV6('${sym}',true)">🔄 Làm mới 6 khung</button><button onclick="openPinnedPtkt(curSym||'BTCUSDT')">Theo mã đang chọn</button></div><div id="pin-card-host">${buildV6CardHtml(sym,"pin",false,true)}</div>`);};
+function collectF4Suggestions(){const syms=new Set([...Object.keys(leftRes),...Object.keys(rightRes),...Object.keys(fullRows),...Object.keys(ptktMap),...(appState.fav||[])]),out=[];for(const sym of syms){if(!sym||isJunkPair(sym))continue;const rl=leftRes[sym]&&!leftRes[sym].error?leftRes[sym]:null,rs=rightRes[sym]&&!rightRes[sym].err?rightRes[sym]:null,rf=fullRows[sym],pt=getPt(sym),px=livePrices[sym]||(rl&&rl.price)||(rs&&rs.px)||(rf&&rf.px)||(pt&&pt.price)||0;if(!(px>0))continue;let tier=0,side="",sc=0,why=[];if(pt&&pt.readyNow){tier=3;side=pt.bestDir;sc=pt.bestScore;why.push(`Vào ngay ${pt.bestDir} (${pt.bestScore}%)`);}if(rl&&rl.verdict!=="TRUNG LẬP / CHỜ"){const ls=rl.total>0?"LONG":"SHORT";if(!side)side=ls;sc=Math.max(sc,Math.min(98,50+Math.abs(rl.total)*7.5));tier=Math.max(tier,Math.abs(rl.total)>=4.5?3:1);why.push(`Quét ${ls} (${rl.total.toFixed(1)})`);}if(rs&&rs.side!=="CHỜ"){const dp=rs.side==="SHORT"?100-rs.prob:rs.prob;if(!side)side=rs.side;sc=Math.max(sc,dp);tier=Math.max(tier,dp>=76?3:1);why.push(`Radar ${rs.side} ${dp.toFixed(0)}%`);}if(pt&&(pt.zone==="OB"||pt.zone==="OS")){tier=Math.max(tier,2);sc=Math.max(sc,70);why.push(`${pt.zone==="OB"?"Quá mua":"Quá bán"} RSI ${pt.rsi.toFixed(0)}`);if(!side)side=pt.zone==="OB"?"SHORT":"LONG";}if(tier===0&&!(appState.fav||[]).includes(sym))continue;if(!side)side=(pt&&pt.bestDir)||"THEO DÕI";out.push({sym,tier,side,sc,px,why:why.slice(0,2).join(" · ")||"★ Yêu thích"});}return out.sort((a,b)=>(b.tier-a.tier)||(b.sc-a.sc));}
+window.openF4Modal=async function(sym=null){f4Sym=normSym(sym||curSym||sbSel||"BTCUSDT");openModal(`📊 PTKT Tổng quát (F4) · ${f4Sym}`,`<div class="row"><input id="f4-in" value="${f4Sym}" style="width:130px"><button class="b-acc" onclick="loadF4Sym(byId('f4-in').value)">Xem</button><button onclick="scanF4Market()">🔍 Quét Top 25 Vol</button><button onclick="toggleFav(f4Sym);renderF4Table()">★ Yêu thích</button><button class="b-up" onclick="sendSymToTest(f4Sym)">💹 Sang TEST</button><button onclick="openColorGui(1)">🎨 Nhấp nháy PTKT</button></div><div class="grid2eq"><div><div class="row" style="margin-bottom:4px"><button onclick="f4Flt='all';renderF4Table()">Tất cả</button><button onclick="f4Flt='entry';renderF4Table()">🎯 Vào ngay</button><button onclick="f4Flt='reb';renderF4Table()">⚡ Hồi về</button><button onclick="f4Flt='LONG';renderF4Table()">🟢 Long</button><button onclick="f4Flt='SHORT';renderF4Table()">🔴 Short</button></div><div class="tbl-wrap" style="max-height:430px"><table id="tbl-f4"><thead><tr><th>Mã</th><th>Gợi ý</th><th>Tin cậy</th><th>Giá</th><th>Lý do</th></tr></thead><tbody></tbody></table></div></div><div style="display:flex;flex-direction:column;gap:6px"><pre id="f4-det" class="plan" style="max-height:210px">Đang phân tích ${f4Sym}...</pre><div id="f4-card-host">${buildV6CardHtml(f4Sym,"f4",false,false)}</div></div></div>`);attachAC("f4-in",{multi:false,onPick:v=>loadF4Sym(v)});renderF4Table();loadF4Sym(f4Sym);};
+window.renderF4Table=function(){const tb=document.querySelector("#tbl-f4 tbody");if(!tb)return;let items=collectF4Suggestions();if(f4Flt==="entry")items=items.filter(x=>x.tier>=3);else if(f4Flt==="reb")items=items.filter(x=>x.tier===2);else if(f4Flt==="LONG"||f4Flt==="SHORT")items=items.filter(x=>x.side===f4Flt);tb.innerHTML=items.map(x=>`<tr class="${f4Sym===x.sym?'sel':''}" onclick="loadF4Sym('${x.sym}')"><td><b>${x.sym}</b></td><td class="${x.side==='LONG'?'up':x.side==='SHORT'?'dn':'amb'}">${x.tier>=3?'🎯 ':x.tier===2?'⚡ ':''}${x.side}</td><td>${x.sc?x.sc.toFixed(0)+'%':'--'}</td><td>${fpx(x.px)}</td><td class="mu">${esc(x.why)}</td></tr>`).join("");};
+window.loadF4Sym=async function(sym){f4Sym=normSym(sym);if(byId("f4-in"))byId("f4-in").value=f4Sym;renderF4Table();ensureMtfV6(f4Sym);try{const L=await buildPlanLines(f4Sym);if(byId("f4-det"))renderLines(byId("f4-det"),L,"f4");if(byId("f4-card-host"))byId("f4-card-host").innerHTML=buildV6CardHtml(f4Sym,"f4",false,false);}catch(e){if(byId("f4-det"))byId("f4-det").textContent=e.message;}};
+window.scanF4Market=async function(){toast("⏳ Đang quét Top 25 Vol cho F4...");const tk=(await apiPerpTickers()).sort((a,b)=>b.vol-a.vol).filter(x=>x.sym.endsWith("USDT")).slice(0,25);for(const x of tk){try{rightRes[x.sym]=await scanOne2(x.sym);renderF4Table();}catch(_){}}toast("✅ Quét xong Top 25 Vol!");};
+
+function hexRgb(h){const s=String(h||"").trim();if(s.startsWith("#")&&s.length===7)return[parseInt(s.slice(1,3),16),parseInt(s.slice(3,5),16),parseInt(s.slice(5,7),16)];return[251,191,36];}
+function mixHex(a,b,t){t=Math.max(0,Math.min(1,t));const[r1,g1,b1]=hexRgb(a),[r2,g2,b2]=hexRgb(b);return"#"+[r1+(r2-r1)*t,g1+(g2-g1)*t,b1+(b2-b1)*t].map(v=>Math.round(v).toString(16).padStart(2,"0")).join("");}
+function lum(h){const[r,g,b]=hexRgb(h);return(0.299*r+0.587*g+0.114*b)/255;}
+function contrastFg(h){return lum(h)>0.52?"#000000":"#ffffff";}
+function rainbowAt(ph){const R=["#ff4d4d","#fbbf24","#22c55e","#38bdf8","#c084fc"],p=((ph%1)+1)%1*R.length,i=Math.floor(p)%R.length;return mixHex(R[i],R[(i+1)%R.length],p-Math.floor(p));}
+function fxWave(eff,ph){ph=((ph%1)+1)%1;if(eff==="bounce")return Math.abs(2*ph-1);if(eff==="static")return 1;return 0.5-0.5*Math.cos(2*Math.PI*ph);}
+function fxPhase(ms,now){const p=Math.max(0.25,(+ms||1000)/1000);return(now%p)/p;}
+function sideCol(cfg,pfx,sd){const u=pfx===""?cfg.use_side_colors:cfg[pfx+"use_side"];if(!u)return pfx===""?cfg.color:cfg[pfx+"color"];return sd==="long"?(pfx===""?cfg.long_color:cfg[pfx+"long"]):sd==="short"?(pfx===""?cfg.short_color:cfg[pfx+"short"]):(pfx===""?cfg.neutral_color:cfg[pfx+"neutral"]);}
+function sampleBg(cfg,now,off,cbg,col){const ph=(fxPhase(cfg.speed_ms,now)+off)%1,tr=fxWave(cfg.effect,ph),a=(cfg.opacity||100)/100;if(cfg.effect==="rainbow"){const c=col?mixHex(col,rainbowAt(ph),0.55):rainbowAt(ph),bg=mixHex(cbg,c,a*(0.35+0.65*(0.6+0.4*tr)));return[bg,contrastFg(bg),c];}if(cfg.effect==="glow"){const c=mixHex(col,"#ffffff",0.5*tr),bg=mixHex(cbg,c,a*(0.45+0.55*tr));return[bg,contrastFg(bg),c];}if(cfg.effect==="static"){const bg=mixHex(cbg,col,a);return[bg,contrastFg(bg),col];}const bg=mixHex(cbg,col,a*(0.1+0.9*tr));return[bg,contrastFg(bg),mixHex(col,"#ffffff",0.25*tr)];}
+function sampleFg(cfg,now,off,cbg,col){const ph=(fxPhase(cfg.fg_speed_ms,now)+off)%1,tr=fxWave(cfg.fg_effect,ph),a=(cfg.fg_opacity||100)/100;if(cfg.fg_effect==="rainbow")return mixHex(cbg,col?mixHex(col,rainbowAt(ph),0.7):rainbowAt(ph),0.45+0.55*a);if(cfg.fg_effect==="glow")return mixHex(mixHex(cbg,col,0.5),mixHex(col,"#ffffff",0.55*tr),0.25+0.75*a*tr);if(cfg.fg_effect==="static")return mixHex(cbg,col,0.35+0.65*a);return mixHex(mixHex(cbg,col,0.38),mixHex(col,"#ffffff",0.12*a),a*(0.15+0.85*tr));}
+function sampleBd(cfg,now,off,cbg,col){const ph=(fxPhase(cfg.bd_speed_ms,now)+off)%1,tr=fxWave(cfg.bd_effect,ph),a=(cfg.bd_opacity||100)/100;if(cfg.bd_effect==="rainbow")return mixHex(cbg,col?mixHex(col,rainbowAt(ph),0.65):rainbowAt(ph),0.3+0.7*a*(0.4+0.6*tr));if(cfg.bd_effect==="static")return mixHex(cbg,col,0.25+0.75*a);return mixHex(mixHex(cbg,col,0.18),col,a*(0.15+0.85*tr));}
+function anyFxOn(c){return !!(c&&c.v627_on&&(c.bg_on||c.fg_on||c.bd_on));}
+function pickZoneCfg(z){const zc=appState.v627.v627_zones[z];if(!zc||!zc.v627_on)return null;if(zc.bg_on||zc.fg_on||zc.bd_on)return zc;const b=appState.v627.v627_blink;return(anyFxOn(b)&&b.tables_fx)?b:null;}
+
+window.updateBlinkDots=function(){const v=appState.v627,cs=getComputedStyle(document.body),up=cs.getPropertyValue("--up"),mu=cs.getPropertyValue("--mu"),amb=cs.getPropertyValue("--amb");[["l",v.blink_l],["c",v.blink_c],["r",v.blink_r]].forEach(([z,on])=>{const d=byId("dot-"+z),m=byId("mode-"+z);if(d)d.style.color=(appState.blink&&on)?up:mu;if(m){m.textContent=v.bz[z].static?"■ Tĩnh":"⚡ Nháy";m.style.color=(appState.blink&&on)?amb:mu;}});const da=byId("dot-a");if(da){da.textContent="● PT phải "+(v.bz.a.static?"■ Tĩnh":"⚡ Nháy");da.style.color=(appState.blink&&!v.bz.a.static)?up:mu;}if(byId("btn-blink"))byId("btn-blink").textContent=appState.blink?"⚡ Nháy":"■ Tĩnh";};
+window.toggleZone=function(z){const k="blink_"+z;appState.v627[k]=!appState.v627[k];if(appState.v627[k])appState.blink=true;updateBlinkDots();saveState();fxRenderTick();toast(`Cảnh báo vùng ${ZNAME[z]}: ${appState.v627[k]?'BẬT':'TẮT'}`);};
+window.toggleZoneMode=function(z){appState.v627.bz[z].static=!appState.v627.bz[z].static;updateBlinkDots();saveState();fxRenderTick();toast(`Vùng ${ZNAME[z]}: ${appState.v627.bz[z].static?'ĐỨNG YÊN (giữ màu)':'NHẤP NHÁY'}`);};
+
+window.fxRenderTick=function(){
+  const now=Date.now()/1000,v=appState.v627,cs=getComputedStyle(document.body),cbg=cs.getPropertyValue("--card").trim()||"#171e28",fg0=cs.getPropertyValue("--fg").trim()||"#e6ebf2",mu0=cs.getPropertyValue("--mu").trim()||"#8a96a8";
+  const mq=byId("mq-span");if(mq){if(appState.blink&&anyFxOn(v.v627_blink)&&v.v627_blink.marquee_fx){const b=v.v627_blink;mq.style.color=b.fg_on?sampleFg(b,now,0,cbg,b.fg_color):sampleBg(b,now,0,cbg,b.color)[2];}else mq.style.color=mu0;}
+  [["l","#tbl-left",v.blink_l],["r","#tbl-sb",v.blink_r]].forEach(([z,sel,flg])=>{
+    const cfg=pickZoneCfg(z),ds=v.def_side[z],defOn=v.def_zones[z],bz=v.bz[z],fb=findBlink[z],fbSym=(fb&&Date.now()<fb.until)?fb.sym:null;
+    document.querySelectorAll(sel+" tbody tr[data-sym]").forEach((tr,idx)=>{
+      const sym=tr.dataset.sym,sd=tr.dataset.fxSide||"neu",hit=tr.dataset.fxHit==="1",isFb=(sym===fbSym);
+      if(!appState.blink){tr.style.backgroundColor="";tr.style.color="";tr.style.outline="";return;}
+      if(isFb){const lit=Math.floor(now*5)%2===0;tr.style.backgroundColor=lit?"#00e5ff":"";tr.style.color=lit?"#000000":"";tr.style.outline=lit?"2px solid #00e5ff":"";return;}
+      if(cfg&&flg&&(hit||cfg.on_signals)){const off=(["wave","rainbow","bounce"].includes(cfg.fg_on?cfg.fg_effect:cfg.effect))?idx*0.14:0,bg=cfg.bg_on?sampleBg(cfg,now,off,cbg,sideCol(cfg,"",sd))[0]:"",fg=cfg.fg_on?sampleFg(cfg,now,off,bg||cbg,sideCol(cfg,"fg_",sd)):(cfg.bg_on?contrastFg(bg):""),bd=cfg.bd_on?`${cfg.bd_width||1}px solid ${sampleBd(cfg,now,off,cbg,sideCol(cfg,"bd_",sd))}`:"";tr.style.backgroundColor=bg;tr.style.color=fg;tr.style.outline=bd;return;}
+      if(defOn&&flg&&hit){const spd=(bz.alt?bz.alt_ms:bz.ms)/1000,ph=bz.static?true:(Math.floor(now/spd)+(bz.alt?(idx%2):0))%2===0,col=ds.on?ds[sd]:(bz.multi?bz.colors[idx%bz.colors.length]:bz.color);if(ph){const bg=mixHex(cbg,col,(bz.alpha||100)/100);tr.style.backgroundColor=bg;tr.style.color=contrastFg(bg);}else{tr.style.backgroundColor="";tr.style.color=col;}tr.style.outline="";return;}
+      tr.style.backgroundColor="";tr.style.color=(ds.on?ds[sd]:"");tr.style.outline="";
+    });
+  });
+  const mt=v.v627_mid_top,tpFmt=v.tp_fmt,cfgTp=anyFxOn(v.v627_tp)?v.v627_tp:null;
+  document.querySelectorAll(".pt-ln").forEach(el=>{
+    const sc=el.dataset.sc||"mid",pt=el.dataset.pt||"",tg=el.dataset.tg||"",sd=el.dataset.sd||"neu";
+    if(!appState.blink){el.style.backgroundColor="";el.style.color="";el.style.outline="";el.style.fontSize="";el.style.fontWeight="";return;}
+    if(sc==="mid"&&(pt==="mid_h"||pt==="mid_sub")){const en=(pt==="mid_h")?mt.main_headers:mt.sub_headers;if(en&&(mt.def_on||anyFxOn(mt))){let bg="",fg=pt==="mid_h"?fg0:mu0,bd="";if(mt.def_on){const lit=mt.def_static||(Math.floor(now*1000/Math.max(250,mt.def_speed_ms))%2===0);if(lit){bg=mixHex(cbg,mt.def_color,(mt.def_opacity||85)/100);fg=contrastFg(bg);}else fg=mt.def_color;}if(anyFxOn(mt)){if(mt.bg_on){bg=sampleBg(mt,now,0,cbg,mt.color)[0];fg=contrastFg(bg);}if(mt.fg_on)fg=sampleFg(mt,now,0,bg||cbg,mt.fg_color);if(mt.bd_on)bd=`${mt.bd_width||1}px solid ${sampleBd(mt,now,0,cbg,mt.bd_color)}`;}el.style.backgroundColor=bg;el.style.color=fg;el.style.outline=bd;return;}}
+    if(tg==="tpl"||tg==="tps"){const sdK=tg==="tpl"?"long":"short";el.style.fontSize=tpFmt.on?`${tpFmt.size||13}px`:"";el.style.fontWeight=(tpFmt.on&&tpFmt.bold)?"800":"";if(cfgTp){const bg=cfgTp.bg_on?sampleBg(cfgTp,now,sdK==="short"?0.25:0,cbg,sideCol(cfgTp,"",sdK))[0]:"",fg=cfgTp.fg_on?sampleFg(cfgTp,now,sdK==="short"?0.25:0,bg||cbg,sideCol(cfgTp,"fg_",sdK)):(bg?contrastFg(bg):tpFmt[sdK]),bd=cfgTp.bd_on?`${cfgTp.bd_width||1}px solid ${sampleBd(cfgTp,now,sdK==="short"?0.25:0,cbg,sideCol(cfgTp,"bd_",sdK))}`:"";el.style.backgroundColor=bg;el.style.color=fg;el.style.outline=bd;return;}if(tpFmt.on){const lit=!tpFmt.blink||(Math.floor(now*1000/Math.max(100,tpFmt.ms))%2===0);if(tpFmt.bg&&lit){const bg=mixHex(cbg,tpFmt["bg_"+sdK],(tpFmt.alpha||100)/100);el.style.backgroundColor=bg;el.style.color=contrastFg(bg);}else{el.style.backgroundColor="";el.style.color=lit?tpFmt[sdK]:mu0;}el.style.outline="";return;}}
+    const it=v.v627_ptkt_v627_on&&v.v627_ptkt_items[pt],inSc=(sc==="mid"&&v.v627_ptkt_scope.mid)||(sc==="right"&&v.v627_ptkt_scope.right)||(sc==="f4"&&v.v627_ptkt_scope.f4);
+    if(inSc&&anyFxOn(it)){const off=sd==="short"?0.14:sd==="neu"?0.28:0,bg=it.bg_on?sampleBg(it,now,off,cbg,sideCol(it,"",sd))[0]:"",fg=it.fg_on?sampleFg(it,now,off,bg||cbg,sideCol(it,"fg_",sd)):(bg?contrastFg(bg):""),bd=it.bd_on?`${it.bd_width||1}px solid ${sampleBd(it,now,off,cbg,sideCol(it,"bd_",sd))}`:"";el.style.backgroundColor=bg;el.style.color=fg;el.style.outline=bd;return;}
+    el.style.backgroundColor="";el.style.color="";el.style.outline="";
+  });
+};
+
+function fxBoxHtml(title,cfg,path,allowSide=true,reRender="openColorGui(cgActiveTab)"){
+  const opt=(cur)=>EFFECTS.map(([k,l])=>`<option value="${k}" ${cur===k?'selected':''}>${l}</option>`).join("");
+  return`<div class="card" style="padding:10px">
+    <div class="row" style="justify-content:space-between"><b>✨ ${title}</b><label><input type="checkbox" ${cfg.v627_on?'checked':''} onchange="${path}.v627_on=this.checked;${path}.enabled=(this.checked&&${path}.bg_on);saveState();fxRenderTick();${reRender}"> <b>Bật v6.2.7</b></label></div>
+    <div class="row">
+      <label><input type="checkbox" ${cfg.bg_on?'checked':''} onchange="${path}.bg_on=this.checked;if(this.checked)${path}.v627_on=true;${path}.enabled=(${path}.v627_on&&this.checked);saveState();${reRender}"> 🎨 Nền</label>
+      <label><input type="checkbox" ${cfg.fg_on?'checked':''} onchange="${path}.fg_on=this.checked;if(this.checked)${path}.v627_on=true;saveState();${reRender}"> 🔤 Chữ (có màu)</label>
+      <label><input type="checkbox" ${cfg.bd_on?'checked':''} onchange="${path}.bd_on=this.checked;if(this.checked)${path}.v627_on=true;saveState();${reRender}"> 🔲 Viền</label>
+      ${allowSide?`<label><input type="checkbox" ${cfg.use_side_colors?'checked':''} onchange="${path}.use_side_colors=${path}.fg_use_side=${path}.bd_use_side=this.checked;saveState();fxRenderTick()"> Phân màu LONG/SHORT/TT</label>`:""}
+    </div>
+    <div class="row"><span>Hiệu ứng:</span><select onchange="${path}.effect=${path}.fg_effect=${path}.bd_effect=this.value;saveState();fxRenderTick()">${opt(cfg.fg_on?cfg.fg_effect:cfg.effect)}</select><span>Độ đậm%:</span><input type="number" min="10" max="100" step="10" value="${cfg.opacity}" style="width:60px" onchange="${path}.opacity=${path}.fg_opacity=${path}.bd_opacity=+this.value||100;saveState();fxRenderTick()"><span>Tốc độ(ms):</span><input type="number" min="250" max="4000" step="50" value="${cfg.speed_ms}" style="width:68px" onchange="${path}.speed_ms=${path}.fg_speed_ms=${path}.bd_speed_ms=+this.value||1000;saveState();fxRenderTick()"><span>Viền(px):</span><input type="number" min="1" max="3" value="${cfg.bd_width||1}" style="width:48px" onchange="${path}.bd_width=+this.value||1;saveState();fxRenderTick()"></div>
+    <div class="row">${allowSide?`LONG <input type="color" value="${cfg.long_color}" onchange="${path}.long_color=${path}.fg_long=${path}.bd_long=this.value;saveState();fxRenderTick()"> SHORT <input type="color" value="${cfg.short_color}" onchange="${path}.short_color=${path}.fg_short=${path}.bd_short=this.value;saveState();fxRenderTick()"> TT <input type="color" value="${cfg.neutral_color}" onchange="${path}.neutral_color=${path}.fg_neutral=${path}.bd_neutral=this.value;saveState();fxRenderTick()">`:""} Chung <input type="color" value="${cfg.color}" onchange="${path}.color=${path}.fg_color=${path}.bd_color=this.value;saveState();fxRenderTick()"></div>
+  </div>`;
+}
+window.syncAllColorTabs=function(mode){
+  const b=appState.v627.v627_blink;
+  if(mode==="only_default"){Object.keys(appState.v627.def_zones).forEach(z=>appState.v627.def_zones[z]=true);appState.v627.tp_fmt.on=true;appState.v627.v627_ptkt_def_on=true;b.v627_on=b.bg_on=b.fg_on=b.bd_on=false;}
+  else if(mode==="text_border"){b.v627_on=true;b.bg_on=false;b.fg_on=true;b.bd_on=true;}
+  else if(mode==="text"){b.v627_on=true;b.bg_on=false;b.fg_on=true;b.bd_on=false;}
+  else if(mode==="border"){b.v627_on=true;b.bg_on=false;b.fg_on=false;b.bd_on=true;}
+  b.enabled=!!(b.v627_on&&b.bg_on);
+  const cp={v627_on:b.v627_on,bg_on:b.bg_on,enabled:b.enabled,effect:b.effect,use_side_colors:b.use_side_colors,color:b.color,long_color:b.long_color,short_color:b.short_color,neutral_color:b.neutral_color,opacity:b.opacity,speed_ms:b.speed_ms,fg_on:b.fg_on,fg_effect:b.fg_effect,fg_use_side:b.fg_use_side,fg_color:b.fg_color,fg_long:b.fg_long,fg_short:b.fg_short,fg_neutral:b.fg_neutral,fg_opacity:b.fg_opacity,fg_speed_ms:b.fg_speed_ms,bd_on:b.bd_on,bd_effect:b.bd_effect,bd_use_side:b.bd_use_side,bd_color:b.bd_color,bd_long:b.bd_long,bd_short:b.bd_short,bd_neutral:b.bd_neutral,bd_opacity:b.bd_opacity,bd_speed_ms:b.bd_speed_ms,bd_width:b.bd_width};
+  "lcra".split("").forEach(z=>Object.assign(appState.v627.v627_zones[z],cp));
+  Object.assign(appState.v627.v627_tp,cp);PTKT_META.forEach(([k])=>Object.assign(appState.v627.v627_ptkt_items[k],cp));
+  appState.v627.v627_ptkt_v627_on=b.v627_on;saveState();fxRenderTick();openColorGui(cgActiveTab);
+  toast(mode==="only_default"?"⚙ Đã trả về Mặc định App!":"✨ Đã đồng bộ hiệu ứng cho tất cả tab!");
+};
+window.openColorGui=function(tabIdx=0){
+  cgActiveTab=tabIdx;const v=appState.v627,tabs=["✨ v6.2.7 Toàn App","🎯 PTKT 8 mục","◀ Trái","◆ Giữa","▶ Phải","▶ PT Phải","LONG/SHORT · TP"];
+  const nav=`<div class="cg-tabs">${tabs.map((t,i)=>`<button class="cg-tab ${tabIdx===i?'act':''}" onclick="openColorGui(${i})">${t}</button>`).join("")}</div>`;
+  let body="";
+  if(tabIdx===0){
+    body=`<div class="row"><label><input type="checkbox" ${v.v627_blink.tables_fx?'checked':''} onchange="appState.v627.v627_blink.tables_fx=this.checked;saveState();fxRenderTick()"> Áp dụng bảng Trái/Phải</label><label><input type="checkbox" ${v.v627_blink.marquee_fx?'checked':''} onchange="appState.v627.v627_blink.marquee_fx=this.checked;saveState();fxRenderTick()"> Marquee chữ chạy</label><button onclick="openMidTopGui()">⚙ Bảng PTKT trên (midtop)…</button></div>
+    ${fxBoxHtml("Toàn App",v.v627_blink,"appState.v627.v627_blink",true)}
+    <div class="row"><button onclick="syncAllColorTabs('only_default')">⚙ Chỉ Mặc định App</button><button class="b-acc" onclick="syncAllColorTabs('text_border')">🔤+🔲 Chữ &amp; Viền tất cả</button><button onclick="syncAllColorTabs('text')">🔤 Chỉ Chữ</button><button onclick="syncAllColorTabs('border')">🔲 Chỉ Viền</button><button class="b-up" onclick="syncAllColorTabs('all')">⚡ Đồng bộ y hệt</button></div>`;
+  }else if(tabIdx===1){
+    const sc=v.v627_ptkt_scope;
+    body=`<div class="row"><label><input type="checkbox" ${v.v627_ptkt_def_on?'checked':''} onchange="appState.v627.v627_ptkt_def_on=this.checked;saveState();fxRenderTick()"> ⚙ Màu PTKT gốc</label><label><input type="checkbox" ${v.v627_ptkt_v627_on?'checked':''} onchange="appState.v627.v627_ptkt_v627_on=this.checked;saveState();fxRenderTick()"> ✨ v6.2.7 (8 mục)</label> | Phạm vi: <label><input type="checkbox" ${sc.mid?'checked':''} onchange="appState.v627.v627_ptkt_scope.mid=this.checked;saveState();fxRenderTick()"> Giữa</label><label><input type="checkbox" ${sc.right?'checked':''} onchange="appState.v627.v627_ptkt_scope.right=this.checked;saveState();fxRenderTick()"> Phải</label><label><input type="checkbox" ${sc.f4?'checked':''} onchange="appState.v627.v627_ptkt_scope.f4=this.checked;saveState();fxRenderTick()"> F4</label></div>
+    <div class="row"><button class="b-acc" onclick="PTKT_META.forEach(([k])=>{const i=appState.v627.v627_ptkt_items[k];i.v627_on=true;i.bg_on=false;i.fg_on=true;i.bd_on=true;});appState.v627.v627_ptkt_v627_on=true;saveState();fxRenderTick();openColorGui(1)">🔤+🔲 Chữ &amp; Viền tất cả</button><button onclick="PTKT_META.forEach(([k])=>{const i=appState.v627.v627_ptkt_items[k];i.v627_on=i.bd_on=true;i.bg_on=i.fg_on=false;});saveState();fxRenderTick();openColorGui(1)">🔲 Chỉ Viền tất cả</button><button onclick="PTKT_META.forEach(([k])=>{const i=appState.v627.v627_ptkt_items[k];i.v627_on=i.bg_on=i.fg_on=i.bd_on=false;});saveState();fxRenderTick();openColorGui(1)">🔄 Tắt tất cả</button></div>
+    ${PTKT_META.map(([k,l])=>{const it=v.v627_ptkt_items[k];return`<div class="card" style="padding:6px"><div class="row" style="justify-content:space-between"><b>${l}</b><div class="row"><label><input type="checkbox" ${it.bg_on?'checked':''} onchange="appState.v627.v627_ptkt_items['${k}'].bg_on=this.checked;appState.v627.v627_ptkt_items['${k}'].v627_on=(this.checked||appState.v627.v627_ptkt_items['${k}'].fg_on||appState.v627.v627_ptkt_items['${k}'].bd_on);saveState();fxRenderTick()"> Nền</label><label><input type="checkbox" ${it.fg_on?'checked':''} onchange="appState.v627.v627_ptkt_items['${k}'].fg_on=this.checked;appState.v627.v627_ptkt_items['${k}'].v627_on=(this.checked||appState.v627.v627_ptkt_items['${k}'].bg_on||appState.v627.v627_ptkt_items['${k}'].bd_on);saveState();fxRenderTick()"> Chữ</label><label><input type="checkbox" ${it.bd_on?'checked':''} onchange="appState.v627.v627_ptkt_items['${k}'].bd_on=this.checked;appState.v627.v627_ptkt_items['${k}'].v627_on=(this.checked||appState.v627.v627_ptkt_items['${k}'].bg_on||appState.v627.v627_ptkt_items['${k}'].fg_on);saveState();fxRenderTick()"> Viền</label><select onchange="appState.v627.v627_ptkt_items['${k}'].effect=appState.v627.v627_ptkt_items['${k}'].fg_effect=appState.v627.v627_ptkt_items['${k}'].bd_effect=this.value;saveState();fxRenderTick()">${EFFECTS.map(([ek,el])=>`<option value="${ek}" ${it.fg_effect===ek?'selected':''}>${el}</option>`).join("")}</select><input type="color" value="${it.color}" onchange="appState.v627.v627_ptkt_items['${k}'].color=appState.v627.v627_ptkt_items['${k}'].fg_color=appState.v627.v627_ptkt_items['${k}'].bd_color=this.value;appState.v627.v627_ptkt_items['${k}'].use_side_colors=appState.v627.v627_ptkt_items['${k}'].fg_use_side=appState.v627.v627_ptkt_items['${k}'].bd_use_side=false;saveState();fxRenderTick()"></div></div></div>`;}).join("")}`;
+  }else if(tabIdx>=2&&tabIdx<=5){
+    const z=["l","c","r","a"][tabIdx-2],bz=v.bz[z],ds=v.def_side[z];
+    body=`<div class="card" style="padding:10px">
+      <div class="row" style="justify-content:space-between"><b>⚙ Cài đặt Blinking Mặc định — ${ZNAME[z]}</b><label><input type="checkbox" ${v.def_zones[z]?'checked':''} onchange="appState.v627.def_zones['${z}']=this.checked;saveState();fxRenderTick()"> Bật Mặc định App</label></div>
+      <div class="row"><label><input type="radio" name="bz_st" ${!bz.static?'checked':''} onchange="appState.v627.bz['${z}'].static=false;updateBlinkDots();saveState();fxRenderTick()"> ⚡ Nhấp nháy</label><label><input type="radio" name="bz_st" ${bz.static?'checked':''} onchange="appState.v627.bz['${z}'].static=true;updateBlinkDots();saveState();fxRenderTick()"> ■ Đứng yên</label><label><input type="checkbox" ${bz.alt?'checked':''} onchange="appState.v627.bz['${z}'].alt=this.checked;saveState();fxRenderTick()"> Xen kẽ</label><label><input type="checkbox" ${bz.multi?'checked':''} onchange="appState.v627.bz['${z}'].multi=this.checked;saveState();fxRenderTick()"> Nhiều màu</label></div>
+      <div class="row">Màu chính: <input type="color" value="${bz.color}" onchange="appState.v627.bz['${z}'].color=this.value;saveState();fxRenderTick()"> Độ đậm%: <input type="number" min="0" max="100" value="${bz.alpha}" style="width:60px" onchange="appState.v627.bz['${z}'].alpha=+this.value||100;saveState();fxRenderTick()"> Tốc độ(ms): <input type="number" min="100" max="5000" step="50" value="${bz.ms}" style="width:70px" onchange="appState.v627.bz['${z}'].ms=+this.value||600;saveState();fxRenderTick()"></div>
+      <div class="row"><label><input type="checkbox" ${ds.on?'checked':''} onchange="appState.v627.def_side['${z}'].on=this.checked;saveState();fxRenderTick()"> Phân màu L/S/TT mặc định:</label> L <input type="color" value="${ds.long}" onchange="appState.v627.def_side['${z}'].long=this.value;appState.v627.def_side['${z}'].on=true;saveState();fxRenderTick()"> S <input type="color" value="${ds.short}" onchange="appState.v627.def_side['${z}'].short=this.value;appState.v627.def_side['${z}'].on=true;saveState();fxRenderTick()"> TT <input type="color" value="${ds.neu}" onchange="appState.v627.def_side['${z}'].neu=this.value;appState.v627.def_side['${z}'].on=true;saveState();fxRenderTick()"></div>
+      ${z==="c"?`<div class="row"><button class="b-acc" onclick="openMidTopGui()">⚙ Tùy chỉnh tiêu đề bảng PTKT trên (midtop)…</button></div>`:""}
+    </div>
+    ${fxBoxHtml("Vùng "+ZNAME[z],v.v627_zones[z],"appState.v627.v627_zones['"+z+"']",true)}`;
+  }else{
+    const tp=v.tp_fmt;
+    body=`<div class="card" style="padding:10px"><b>LONG / SHORT · giá TP (Mặc định)</b>
+      <div class="row"><label><input type="checkbox" ${tp.on?'checked':''} onchange="appState.v627.tp_fmt.on=this.checked;saveState();fxRenderTick()"> Bật</label><label><input type="checkbox" ${tp.bold?'checked':''} onchange="appState.v627.tp_fmt.bold=this.checked;saveState();fxRenderTick()"> In đậm</label><label><input type="checkbox" ${tp.bg?'checked':''} onchange="appState.v627.tp_fmt.bg=this.checked;saveState();fxRenderTick()"> Tô nền</label><label><input type="checkbox" ${tp.blink?'checked':''} onchange="appState.v627.tp_fmt.blink=this.checked;saveState();fxRenderTick()"> Nhấp nháy</label> Cỡ: <input type="number" min="10" max="22" value="${tp.size}" style="width:55px" onchange="appState.v627.tp_fmt.size=+this.value||13;saveState();fxRenderTick()"> LONG <input type="color" value="${tp.long}" onchange="appState.v627.tp_fmt.long=appState.v627.tp_fmt.bg_long=this.value;saveState();fxRenderTick()"> SHORT <input type="color" value="${tp.short}" onchange="appState.v627.tp_fmt.short=appState.v627.tp_fmt.bg_short=this.value;saveState();fxRenderTick()"></div>
+    </div>
+    ${fxBoxHtml("LONG / SHORT · giá TP",v.v627_tp,"appState.v627.v627_tp",true)}`;
+  }
+  openModal("🎨 Cài đặt Nhấp nháy · Màu sắc · v6.2.7 (color -gui)",nav+body);
+};
+window.openMidTopGui=function(){
+  const mt=appState.v627.v627_mid_top;
+  openModal("⚙ Tùy chỉnh Tiêu đề bảng PTKT trên (midtop)",`
+    <div class="card" style="padding:10px">
+      <div class="row"><label><input type="checkbox" ${mt.def_on?'checked':''} onchange="appState.v627.v627_mid_top.def_on=this.checked;saveState();fxRenderTick()"> ⚙ Bật Mặc định App (tiêu đề bảng trên)</label><label><input type="checkbox" ${mt.def_static?'checked':''} onchange="appState.v627.v627_mid_top.def_static=this.checked;saveState();fxRenderTick()"> ■ Đứng yên</label> Màu <input type="color" value="${mt.def_color}" onchange="appState.v627.v627_mid_top.def_color=this.value;saveState();fxRenderTick()"></div>
+      <div class="row"><label><input type="checkbox" ${mt.main_headers?'checked':''} onchange="appState.v627.v627_mid_top.main_headers=this.checked;saveState();fxRenderTick()"> Tiêu đề chính (XU HƯỚNG, PHÂN KỲ...)</label><label><input type="checkbox" ${mt.sub_headers?'checked':''} onchange="appState.v627.v627_mid_top.sub_headers=this.checked;saveState();fxRenderTick()"> Tiêu đề con ([Dòng tiền])</label></div>
+    </div>
+    ${fxBoxHtml("Tiêu đề bảng PTKT trên",mt,"appState.v627.v627_mid_top",false,"openMidTopGui()")}
+    <button onclick="openColorGui(0)">⬅ Quay lại Color GUI</button>`);
+};
+window.openColBellModal=function(side){
+  const cn=appState.v627.col_notif[side],fl=side==="l"?appState.v627.blink_l:appState.v627.blink_r,name=side==="l"?"CỘT TRÁI":"CỘT PHẢI";
+  openModal(`🔔 Thông báo & Nhấp nháy · ${name}`,`
+    <label><input type="checkbox" ${fl?'checked':''} onchange="appState.v627['blink_${side}']=this.checked;updateBlinkDots();saveState();fxRenderTick();renderLeftTable();renderSbTable()"> Bật nhấp nháy hồi về ở ${name}</label>
+    <label><input type="checkbox" ${appState.v627.bz[side].static?'checked':''} onchange="appState.v627.bz['${side}'].static=this.checked;updateBlinkDots();saveState();fxRenderTick()"> Chế độ Đứng yên (■ Tĩnh)</label>
+    <label><input type="checkbox" ${cn.find_blink?'checked':''} onchange="appState.v627.col_notif['${side}'].find_blink=this.checked;saveState()"> Nhấp nháy nổi bật khi Tìm nhanh</label>
+    <label><input type="checkbox" ${cn.entry?'checked':''} onchange="appState.v627.col_notif['${side}'].entry=this.checked;saveState()"> Tự báo khi có cặp Vào lệnh ngay (≥ 75%)</label>
+    <label><input type="checkbox" ${cn.rebound?'checked':''} onchange="appState.v627.col_notif['${side}'].rebound=this.checked;saveState()"> Tự báo khi giá chạm vùng hồi về</label>
+    <div class="row"><button class="b-acc" onclick="openColorGui(${side==='l'?2:4})">🎨 Chỉnh màu ${name}</button><button onclick="openPriceAlerts()">🎯 Cảnh báo giá</button></div>`);
+};
+
+window.openSettingsModal=function(){
+  const m=appState.master,nf=appState.v627.notif;
+  openModal("⚙️ Cài đặt Hệ thống & Thông báo (v6.2.7)",`
+    <div class="card" style="padding:9px"><b>Thông báo &amp; Cảnh báo</b>
+      <label><input type="checkbox" id="st-inapp" ${m.inapp_alerts?'checked':''}> Hiện thanh gợi ý vào lệnh ngay trong App (1-click sang TEST)</label>
+      <label><input type="checkbox" id="st-toast" ${nf.toast?'checked':''}> Hiện Popup Toast thông báo</label>
+      <label><input type="checkbox" id="st-entry" ${nf.entry?'checked':''}> Tự báo khi có kèo Vào lệnh ngay (≥ 75%)</label>
+      <label><input type="checkbox" id="st-reb" ${nf.rebound?'checked':''}> Tự báo khi giá hồi về vùng dự đoán</label>
+      <label><input type="checkbox" id="st-pa" ${nf.price?'checked':''}> Kích hoạt cảnh báo giá mục tiêu đã đặt</label>
+      <label><input type="checkbox" id="st-br" ${nf.browser?'checked':''} onchange="if(this.checked&&typeof Notification!=='undefined'&&Notification.permission==='default')Notification.requestPermission()"> Thông báo trình duyệt (Web Notification)</label>
+    </div>
+    <div class="row"><span>Điểm quét &gt;=</span><input id="st-sc" type="number" step="0.5" value="${m.alert_min_score||3}" style="width:65px"><span>Xác suất % &gt;=</span><input id="st-pr" type="number" value="${m.alert_min_prob||68}" style="width:65px"><span>Chống lặp (phút):</span><input id="st-cd" type="number" value="${m.alert_cooldown_min||15}" style="width:60px"></div>
+    <div class="row"><button class="b-up" onclick="appState.master.inapp_alerts=byId('st-inapp').checked;appState.master.alert_min_score=+byId('st-sc').value||3;appState.master.alert_min_prob=+byId('st-pr').value||68;appState.master.alert_cooldown_min=+byId('st-cd').value||15;Object.assign(appState.v627.notif,{toast:byId('st-toast').checked,entry:byId('st-entry').checked,rebound:byId('st-reb').checked,price:byId('st-pa').checked,browser:byId('st-br').checked});saveState();closeModal();toast('✅ Đã lưu Cài đặt!')">💾 Lưu cài đặt</button><button onclick="openColorGui()">🎨 Màu &amp; Nhấp nháy</button><button onclick="openTelegramModal()">✈️ Telegram</button><button onclick="openGitHubModal()">☁️ GitHub</button></div>`);
+};
+
+window.openAboutConsoleModal=function(){
+  const lCnt=Object.keys(leftRes).length,rCnt=Object.keys(rightRes).length,alCnt=(appState.master.price_alerts||[]).filter(a=>a.active).length;
+  openModal("📡 HungNguyen-Radar Master · Thông tin & Console nhanh",`
+    <div class="row"><img src="data:image/png;base64,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" width="42" height="42"><div><b style="font-size:15px;color:#60a5fa">HungNguyen-Radar Master · Version 3.1.4 (Web v6.2.7)</b><br><span class="amb">Nguyễn Văn Hùng © · Tây Ninh · SĐT: 0906735165 · Donnguyen6679@gmail.com</span></div></div>
+    <div class="v6-box" style="font-family:Consolas,monospace;font-size:12px">
+      • Sàn ưu tiên: <b>${(appState.ex||"binance").toUpperCase()}</b> · Độ trễ: <b>${apiLastDt?apiLastDt+" ms":"chưa đo"}</b> ${apiLastErr?`<span class="dn">(${esc(apiLastErr)})</span>`:""}<br>
+      • Dữ liệu: <b>${(appState.fav||[]).length}</b> ★ Yêu thích · Trái <b>${lCnt}</b> cặp · Phải <b>${rCnt}</b> cặp · <b>${alCnt}</b> cảnh báo giá
+    </div>
+    <div class="row"><input id="logo-con" style="flex:1;font-family:Consolas,monospace" placeholder="Nhập lệnh console (vd: color -gui, f4, off, ?/?) rồi Enter..." onkeydown="if(event.key==='Enter'){byId('con-in').value=this.value;this.value='';runConsole();}"><button class="b-acc" onclick="byId('con-in').value=byId('logo-con').value;byId('logo-con').value='';runConsole()">Chạy lệnh</button></div>
+    <div class="row">
+      <button onclick="openColorGui()">🎨 Màu nhấp nháy</button>
+      <button onclick="openPriceAlerts()">🔔 Cảnh báo giá</button>
+      <button onclick="openSettingsModal()">⚙ Cài đặt</button>
+      <button onclick="openPinnedPtkt(curSym)">📌 Ghim PTKT</button>
+      <button onclick="openF4Modal(curSym)">📊 F4 Tổng quát</button>
+      <button onclick="downloadBackupJSON()">💾 Backup (.json)</button>
+      <button onclick="fixApi()">🔄 Fix API</button>
+      <button onclick="openCmdHelpModal()">💻 Bảng lệnh (???)</button>
+      <button onclick="openSecretManualModal()">📘 HDSD (?/?)</button>
+    </div>`);
+  setTimeout(()=>byId("logo-con")?.focus(),40);
+};
+window.openCmdHelpModal=function(){openModal("💻 Bảng hướng dẫn câu lệnh Console · ???",`<pre class="plan" style="max-height:430px">LỆNH CONSOLE (ô 'console ›' ở đáy màn hình hoặc trong Logo):\n• on / off / off -1          : Bật / Tắt nhấp nháy / Tắt nháy nhưng vẫn báo\n• color -gui                 : Mở bảng GUI cài đặt màu &amp; nhấp nháy đầy đủ\n• color &lt;màu&gt; &lt;đậm%&gt; &lt;ms&gt;    : Chỉnh nhanh (vd: color trai red 60 400 | color reset)\n• color v627 [on|off|pulse|rainbow|glow|wave|bounce|static|chu|vien|nen|both]\n• speed &lt;ms&gt;                 : Chỉnh tốc độ nhấp nháy (vd: speed 300)\n• midtop                     : Mở GUI tùy chỉnh tiêu đề bảng PTKT trên\n• ptkt v627 | both | orig    : Chuyển chế độ hiển thị PTKT\n• ptkt blink on | off        : Bật/Tắt nhấp nháy 8 mục PTKT\n• ptkt / f4 / alerts / notif : Mở Ghim PTKT / F4 Tổng quát / Cảnh báo giá / Cài đặt\n• backup / restore           : Tải xuống / Nhập file cấu hình Backup (.json)\n• fix api / net              : Làm mới API / Kiểm tra kết nối Binance, Bitget, OKX\n• ver / clear / help / ??? / ?/? : Phiên bản / Xóa nhật ký / Trợ giúp / HDSD đầy đủ</pre>`);};
+window.openHelpModal=function(){openModal("❓ Trợ giúp nhanh · F1",`<pre class="plan">PHÍM TẮT: F1 (Trợ giúp) · F4 (PTKT Tổng quát) · F5 (Làm mới toàn bộ) · Ctrl+F (Tìm nhanh cặp)\n\nBấm trực tiếp vào Logo góc trên trái để xem trạng thái hệ thống &amp; chạy nhanh mọi lệnh Console.\nGõ '???' để xem danh sách lệnh Console, gõ '?/?' để mở Sổ tay hướng dẫn chi tiết.</pre>`);};
+window.openSecretManualModal=function(){openModal("📘 Sổ tay hướng dẫn chi tiết (?/?)",`<pre class="plan" style="max-height:450px">1. QUÉT TÍN HIỆU (3 CỘT)\n• Trái &amp; Phải có thanh sắp xếp (Az, ⇅, %, 🎯), ô 🔍 Tìm nhanh (nhấp nháy 5.5s khi chọn), bộ lọc 4 nút (Tất cả, Đang có tín hiệu, Tín hiệu tốt, Vào lệnh ngay), 🚫 Loại coin rác, 🛡️ Loại thao túng giá và 🔔 cài đặt thông báo riêng từng cột.\n• Giữa &amp; Phải tích hợp Thẻ PTKT Cảnh báo &amp; Hồi về v6.2.7 (RSI, Mốc hồi 1/2, Vào lệnh ngay ≥ 75%, Bảng Đa khung 5m–1d kèm nút 🔔 báo đảo chiều từng khung).\n\n2. CÀI ĐẶT BLINKING MẶC ĐỊNH &amp; v6.2.7 (color -gui)\n• Thanh đáy có các chấm ● Trái / ● Giữa / ● Phải / ● PT phải và ⚡ Nháy / ■ Tĩnh.\n• Trong color -gui có thể bật riêng Mặc định App hoặc 6 hiệu ứng v6.2.7 (Nền / Chữ / Viền) cho từng vùng và 8 mục PTKT.\n\n3. CONSOLE &amp; SAO LƯU\n• Hỗ trợ đầy đủ on, off, off -1, color, color v627, midtop, ptkt, f4, alerts, notif, backup, restore, fix api, net.</pre>`);};
+
+window.fixApi=async function(){klineCache.clear();toast("🔄 Đang làm mới kết nối API...");await syncExchangeSymbols();await scanLeft();await sbScan();if(activeTab===2)loadChart();if(activeTab===3)refreshHeatmap();toast("✅ Đã làm mới API & quét lại!");};
+window.diagnoseNet=async function(){
+  toast("Đang kiểm tra kết nối Binance / Bitget / OKX...");const out=[];
+  for(const[nm,url]of[["Binance fapi",FAPI_HOSTS[0]+"/fapi/v1/time"],["Binance fapi1",FAPI_HOSTS[1]+"/fapi/v1/time"],["Bitget","https://api.bitget.com/api/v2/public/time"],["OKX","https://www.okx.com/api/v5/public/time"]]){
+    const t0=performance.now();try{const r=await fetch(url);out.push(`${nm}: HTTP ${r.status} · ${Math.round(performance.now()-t0)} ms`);}catch(e){out.push(`${nm}: LỖI (${e.message})`);}
+  }
+  openModal("🌐 Chẩn đoán kết nối API",`<pre class="plan">${out.join("\n")}\n\nLỗi gần nhất: ${apiLastErr||"(không có)"}</pre>`);
+};
+
+window.runConsole=function(){
+  const raw=byId("con-in").value.trim(),low=raw.toLowerCase().replace(/\s+/g," ");byId("con-in").value="";if(!low)return;
+  if(low.replace(/\s/g,"")==="?/?")return openSecretManualModal();
+  if(["???","cmd","cmds"].includes(low))return openCmdHelpModal();
+  if(["help","?"].includes(low))return openHelpModal();
+  if(low==="clear"){appState.log=[];byId("sig-log").textContent="Nhật ký tín hiệu:\n";saveState();return toast("Đã xóa nhật ký");}
+  if(low==="f4")return openF4Modal(curSym);
+  if(low==="ptkt")return openPinnedPtkt(curSym);
+  if(low==="alerts"||low==="alert")return openPriceAlerts();
+  if(low==="notif"||low==="notify")return openSettingsModal();
+  if(low==="backup")return downloadBackupJSON();
+  if(low==="restore"){const inp=document.createElement("input");inp.type="file";inp.accept=".json";inp.onchange=()=>importBackupJSON(inp);return inp.click();}
+  if(low==="midtop"||low==="ptkt top"||low==="ptkt tren")return openMidTopGui();
+  if(["ptkt v627","ptkt both","ptkt orig"].includes(low))return setPtktMode(low.split(" ")[1]);
+  if(["ptkt blink on","ptkt blink off"].includes(low)){const on=low.endsWith("on");PTKT_META.forEach(([k])=>{const it=appState.v627.v627_ptkt_items[k];it.v627_on=on;if(on&&!it.fg_on&&!it.bg_on&&!it.bd_on)it.fg_on=true;});appState.v627.v627_ptkt_v627_on=on;saveState();fxRenderTick();return toast("PTKT Blink: "+(on?"BẬT":"TẮT"));}
+  if(["fix api","fixapi","fix"].includes(low))return fixApi();
+  if(low==="net")return diagnoseNet();
+  if(low==="ver")return toast("HungNguyen-Radar Master Web v3.1.4 (v6.2.7 Sync)",5000);
+  if(["on","off","off -1","off-1"].includes(low)){appState.blink=(low==="on");appState.v627.blink_notify=(low!=="on"&&low!=="off");updateBlinkDots();saveState();fxRenderTick();return toast(appState.blink?"Đã BẬT nhấp nháy":(appState.v627.blink_notify?"Đã TẮT nháy · VẪN báo hồi về":"Đã TẮT nhấp nháy"));}
+  const parts=low.split(" ");
+  if(["color","colour","mau"].includes(parts[0])){
+    if(parts.slice(1).some(x=>["-gui","gui","--gui"].includes(x)))return openColorGui();
+    if(parts[1]==="v627"){
+      const b=appState.v627.v627_blink;b.v627_on=true;
+      for(let i=2;i<parts.length;i++){const t=parts[i];
+        if(["on","bat"].includes(t))b.v627_on=true;
+        else if(["off","tat"].includes(t))b.v627_on=b.bg_on=b.fg_on=b.bd_on=false;
+        else if(["chu","text","fg"].includes(t)){b.fg_on=true;b.bg_on=false;}
+        else if(["vien","border","bd"].includes(t))b.bd_on=true;
+        else if(["nen","bg"].includes(t))b.bg_on=true;
+        else if(t==="both")b.bg_on=b.fg_on=b.bd_on=true;
+        else if(EFFECTS.some(e=>e[0]===t)){b.effect=b.fg_effect=b.bd_effect=t;if(!b.bg_on&&!b.fg_on&&!b.bd_on)b.fg_on=true;}
+        else if(["long","short","neu"].includes(t)&&parts[i+1]){const cv=COLOR_VI[parts[i+1]]||parts[i+1];if(cv.startsWith("#")){if(t==="long")b.long_color=b.fg_long=b.bd_long=cv;else if(t==="short")b.short_color=b.fg_short=b.bd_short=cv;else b.neutral_color=b.fg_neutral=b.bd_neutral=cv;}i++;}
+      }
+      b.enabled=!!(b.v627_on&&b.bg_on);syncAllColorTabs("all");return;
+    }
+    const zmap={l:"l",left:"l",trai:"l",c:"c",center:"c",giua:"c",r:"r",right:"r",phai:"r",a:"a",pt:"a"};let zs=[],reset=false,upd={};
+    parts.slice(1).forEach(tk=>{
+      if(["all","tatca"].includes(tk))zs=["l","c","r","a"];
+      else if(zmap[tk])zs.push(zmap[tk]);
+      else if(["reset","default"].includes(tk))reset=true;
+      else if(["static","tinh"].includes(tk))upd.static=true;
+      else if(["blink","nhay"].includes(tk))upd.static=false;
+      else if(["multi","nhieu"].includes(tk))upd.multi=true;
+      else if(["single","cung"].includes(tk))upd.multi=false;
+      else if(["alt","xenke"].includes(tk))upd.alt=true;
+      else if(["sync","cungluc"].includes(tk))upd.alt=false;
+      else if(/^\d+%$/.test(tk))upd.alpha=Math.max(0,Math.min(100,parseInt(tk)));
+      else if(/^\d+ms$/.test(tk))upd.ms=Math.max(100,Math.min(5000,parseInt(tk)));
+      else if(COLOR_VI[tk]||/^#[0-9a-f]{3,6}$/i.test(tk))upd.color=COLOR_VI[tk]||tk;
+    });
+    if(!zs.length)zs=["l","c","r","a"];zs.forEach(z=>{if(reset)appState.v627.bz[z]=defZone();Object.assign(appState.v627.bz[z],upd);});
+    updateBlinkDots();saveState();fxRenderTick();return toast("Đã cập nhật màu nhấp nháy ("+zs.join(",")+")");
+  }
+  if(["speed","toc"].includes(parts[0])&&parts[1]){const ms=Math.max(100,Math.min(5000,parseInt(parts[1])||600));"lcra".split("").forEach(z=>appState.v627.bz[z].ms=ms);saveState();fxRenderTick();return toast(`Tốc độ nhấp nháy: ${ms} ms`);}
+  toast(`Lệnh không hợp lệ: ${raw} (gõ help hoặc ???)`);
+};
+
+const _origLiveTick=liveTick;
+liveTick=async function(){
+  await _origLiveTick();
+  const rw=appState.v627.reb_watch||{},nf=appState.v627.notif||{};
+  if(nf.rebound){
+    let ch=false;
+    Object.keys(rw).forEach(sym=>{
+      const it=rw[sym],px=livePrices[sym];if(!it||!px||!it.target)return;
+      if((it.dir==="DOWN"&&px<=it.target*1.003)||(it.dir==="UP"&&px>=it.target*0.997)){
+        delete rw[sym];ch=true;toast(`🔄 GIÁ HỒI VỀ: ${sym} @ $${fpx(px)} (mục tiêu $${fpx(it.target)})`,7000);beep();
+      }
+    });
+    if(ch)saveState();
+  }
+  if(pinnedSym&&byId("pin-card-host"))renderAllV6Cards(pinnedSym);
+};
+
+window.addEventListener("DOMContentLoaded",()=>{
+  const fl=appState.v627.flt_sides.l,fr=appState.v627.flt_sides.r;
+  if(byId("l-flt-body"))byId("l-flt-body").style.display=fl.collapsed?"none":"flex";
+  if(byId("l-col-btn"))byId("l-col-btn").textContent=fl.collapsed?"▽":"▲";
+  if(byId("l-nojunk"))byId("l-nojunk").checked=!!fl.no_junk;
+  if(byId("l-nomanip"))byId("l-nomanip").checked=!!fl.no_manip;
+  if(byId("r-flt-body"))byId("r-flt-body").style.display=fr.collapsed?"none":"flex";
+  if(byId("r-col-btn"))byId("r-col-btn").textContent=fr.collapsed?"▽":"▲";
+  if(byId("r-nojunk"))byId("r-nojunk").checked=!!fr.no_junk;
+  if(byId("r-nomanip"))byId("r-nomanip").checked=!!fr.no_manip;
+  attachAC("l-find",{multi:false,poolFn:()=>Object.keys(leftRes),onPick:s=>triggerFindBlink(s,"l")});
+  attachAC("r-find",{multi:false,poolFn:()=>Object.keys(rightRes),onPick:s=>triggerFindBlink(s,"r")});
+  setPtktMode(appState.v627.ptkt_mode||"both");
+  updateBlinkDots();
+  setInterval(fxRenderTick,120);
+  window.addEventListener("keydown",e=>{
+    if(e.key==="F1"){e.preventDefault();openHelpModal();}
+    else if(e.key==="F4"){e.preventDefault();openF4Modal(curSym);}
+    else if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="f"){e.preventDefault();switchTab(0);byId("l-find")?.focus();}
+  });
+});
+})();
+</script>
+
 </body>
 </html>
